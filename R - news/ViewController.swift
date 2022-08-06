@@ -19,21 +19,13 @@ class ViewController: UIViewController {
     
     private func setupHomePage() {
         
-        let logo = UIImageView()
-        logo.image = UIImage(named: "Image")
-        view.addSubview(logo)
-        logo.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(100)
-            make.right.left.equalToSuperview().inset(120)
-        }
-        
         let frontPage = UILabel()
         frontPage.text = "FrontPage"
         frontPage.textAlignment = .center
         frontPage.font = UIFont(name: "Helvetica", size: 22)
         view.addSubview(frontPage)
         frontPage.snp.makeConstraints { make in
-            make.top.equalTo(logo).inset(165)
+            make.top.equalToSuperview().inset(165)
             make.right.left.equalToSuperview().inset(100)
         }
         

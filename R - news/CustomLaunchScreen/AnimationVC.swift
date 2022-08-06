@@ -25,6 +25,7 @@ class AnimationVC: UIViewController {
             self.animateView(self.viewAnimation)
         })
         
+        view.backgroundColor = .white
         viewAnimation.contentMode = .scaleAspectFit
         viewAnimation.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(viewAnimation)

@@ -8,97 +8,82 @@
 import UIKit
 import SnapKit
 import Lottie
+import RiveRuntime
 
 class ViewController: UIViewController {
    
+    var rive = RiveViewModel(fileName: "shapes")
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let riveView = rive.createRiveView()
+        view.addSubview(riveView)
+        riveView.frame = view.frame
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHomePage()
-        view.backgroundColor = #colorLiteral(red: 0.8817058206, green: 0.8653401136, blue: 0.9265754819, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.9724035859, green: 0.9314741492, blue: 0.9023552537, alpha: 1)
+        view.blurBackgroung(style: .light)
     }
     
     private func setupHomePage() {
         
-        let frontPage = UILabel()
-        frontPage.text = "FrontPage"
-        frontPage.textAlignment = .center
-        frontPage.font = UIFont(name: "Helvetica", size: 22)
-        view.addSubview(frontPage)
-        frontPage.snp.makeConstraints { make in
+        let welcomeLabel = UILabel()
+        welcomeLabel.text = "Welcome!"
+        welcomeLabel.textAlignment = .left
+        welcomeLabel.font = UIFont(name: "Helvetica", size: 22)
+        view.addSubview(welcomeLabel)
+        welcomeLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(165)
-            make.right.left.equalToSuperview().inset(100)
-        }
-        
-        let text1 = UILabel()
-        text1.text = "FrontPage will help you be heard."
-        text1.numberOfLines = 1
-        text1.textAlignment = .center
-        text1.font = UIFont(name: "Helvetica", size: 20)
-        text1.alpha = 0.8
-        view.addSubview(text1)
-        text1.snp.makeConstraints { make in
-            make.top.equalTo(frontPage).inset(120)
-            make.left.right.equalToSuperview().inset(30)
+            make.right.left.equalToSuperview().inset(70)
         }
 
-        let text = UILabel()
-        text.text = "Your buisness has something to say."
-        text.numberOfLines = 1
-        text.textAlignment = .center
-        text.font = UIFont(name: "Helvetica", size: 20)
-        text.alpha = 0.8
-        view.addSubview(text)
-        text.snp.makeConstraints { make in
-            make.top.equalTo(frontPage).inset(60)
-            make.left.right.equalToSuperview().inset(30)
+        let bodyLabel = UILabel()
+        bodyLabel.text = "We have created this safe place just for you, where you can read news that are relaitable and relevant."
+        bodyLabel.numberOfLines = 0
+        bodyLabel.textAlignment = .left
+        bodyLabel.font = UIFont(name: "Helvetica", size: 20)
+        bodyLabel.alpha = 0.8
+        view.addSubview(bodyLabel)
+        bodyLabel.snp.makeConstraints { make in
+            make.top.equalTo(welcomeLabel).inset(70)
+            make.left.right.equalToSuperview().inset(70)
         }
         
-        let signInLabel = UILabel()
-        signInLabel.text = "Sign in with LinkedIn to get started."
-        signInLabel.font = UIFont(name: "Helvetica", size: 14)
-        signInLabel.textAlignment = .center
-        view.addSubview(signInLabel)
-        signInLabel.snp.makeConstraints { make in
-            make.top.equalTo(text1).inset(150)
-            make.right.left.equalToSuperview().inset(60)
+        let clickLabel = UILabel()
+        clickLabel.text = "One click apart from the news"
+        clickLabel.font = UIFont(name: "Helvetica", size: 16)
+        clickLabel.textAlignment = .center
+        view.addSubview(clickLabel)
+        clickLabel.snp.makeConstraints { make in
+            make.top.equalTo(bodyLabel).inset(350)
+            make.right.left.equalToSuperview().inset(50)
         }
         
-        let field = UITextField()
-        field.attributedPlaceholder = NSAttributedString(
-            string: "  Email or username",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        field.backgroundColor = #colorLiteral(red: 0.7019608617, green: 0.7019608617, blue: 0.7019608617, alpha: 1)
-        field.textColor = .black
-        field.layer.cornerRadius = 5
-        view.addSubview(field)
-        field.snp.makeConstraints { make in
-            make.top.equalTo(signInLabel).inset(30)
+        let logInButton = UIButton(type: .system)
+        logInButton.setTitle("Log In", for: .normal)
+        logInButton.setTitleColor(.white, for: .normal)
+        logInButton.titleLabel?.font = UIFont(name: "Helvetica", size: 19)
+        logInButton.backgroundColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
+        logInButton.layer.cornerRadius = 7
+        view.addSubview(logInButton)
+        logInButton.snp.makeConstraints { make in
+            make.top.equalTo(clickLabel).inset(40)
             make.right.left.equalToSuperview().inset(90)
             make.height.equalTo(40)
-        }
-        let field1 = UITextField()
-        field1.attributedPlaceholder = NSAttributedString(
-            string: "  Password",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        field1.backgroundColor = #colorLiteral(red: 0.7019608617, green: 0.7019608617, blue: 0.7019608617, alpha: 1)
-        field1.textColor = .black
-        field1.layer.cornerRadius = 5
-        view.addSubview(field1)
-        field1.snp.makeConstraints { make in
-            make.top.equalTo(field).inset(60)
-            make.right.left.equalToSuperview().inset(90)
-            make.height.equalTo(40)
-        }
-        
-        let button = UIButton(type: .system)
-        button.setTitle("Sign In", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Helvetica", size: 19)
-        button.backgroundColor = #colorLiteral(red: 0.008872527629, green: 0.4657552242, blue: 0.7099104524, alpha: 1)
-        button.layer.cornerRadius = 5
-        view.addSubview(button)
-        button.snp.makeConstraints { make in
-            make.top.equalTo(field1).inset(60)
+    }
+        let signUpButton = UIButton(type: .system)
+        signUpButton.setTitle("Sign Up", for: .normal)
+        signUpButton.setTitleColor(.white, for: .normal)
+        signUpButton.titleLabel?.font = UIFont(name: "Helvetica", size: 19)
+        signUpButton.backgroundColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
+        signUpButton.layer.cornerRadius = 7
+        signUpButton.alpha = 0.5
+        view.addSubview(signUpButton)
+        signUpButton.snp.makeConstraints { make in
+            make.top.equalTo(logInButton).inset(60)
             make.right.left.equalToSuperview().inset(90)
             make.height.equalTo(40)
     }

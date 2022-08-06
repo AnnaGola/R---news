@@ -25,7 +25,7 @@ class AnimationVC: UIViewController {
             self.animateView(self.viewAnimation)
         })
         
-        view.backgroundColor = .white
+        view.backgroundColor = #colorLiteral(red: 0.9724035859, green: 0.9314741492, blue: 0.9023552537, alpha: 1)
         viewAnimation.contentMode = .scaleAspectFit
         viewAnimation.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(viewAnimation)

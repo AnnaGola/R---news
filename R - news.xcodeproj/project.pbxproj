@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9A16E9298A455FC46168CE23 /* Pods_R___news.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0509E8CBEE83740602CF2F8 /* Pods_R___news.framework */; };
+		AF8013D2289EF2550071C156 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8013D1289EF2550071C156 /* View+.swift */; };
+		AF8013D5289EFADD0071C156 /* RiveAssets in Resources */ = {isa = PBXBuildFile; fileRef = AF8013D4289EFADD0071C156 /* RiveAssets */; };
+		AF8013D8289EFB970071C156 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = AF8013D7289EFB970071C156 /* RiveRuntime */; };
 		AF892CB9289AD48E00E79D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF892CB8289AD48E00E79D4A /* AppDelegate.swift */; };
 		AF892CBB289AD48E00E79D4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF892CBA289AD48E00E79D4A /* SceneDelegate.swift */; };
 		AF892CBD289AD48E00E79D4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF892CBC289AD48E00E79D4A /* ViewController.swift */; };
@@ -20,6 +23,8 @@
 /* Begin PBXFileReference section */
 		4535FB157DCF704A201AB2AA /* Pods-R - news.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R - news.debug.xcconfig"; path = "Target Support Files/Pods-R - news/Pods-R - news.debug.xcconfig"; sourceTree = "<group>"; };
 		6692AAAADC831CBD441BD6B0 /* Pods-R - news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R - news.release.xcconfig"; path = "Target Support Files/Pods-R - news/Pods-R - news.release.xcconfig"; sourceTree = "<group>"; };
+		AF8013D1289EF2550071C156 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		AF8013D4289EFADD0071C156 /* RiveAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RiveAssets; sourceTree = "<group>"; };
 		AF892CB5289AD48E00E79D4A /* R - news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "R - news.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF892CB8289AD48E00E79D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF892CBA289AD48E00E79D4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A16E9298A455FC46168CE23 /* Pods_R___news.framework in Frameworks */,
+				AF8013D8289EFB970071C156 /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +56,14 @@
 				C0509E8CBEE83740602CF2F8 /* Pods_R___news.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF8013D0289EF2450071C156 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AF8013D1289EF2550071C156 /* View+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AF892CAC289AD48E00E79D4A = {
@@ -73,6 +87,8 @@
 		AF892CB7289AD48E00E79D4A /* R - news */ = {
 			isa = PBXGroup;
 			children = (
+				AF8013D4289EFADD0071C156 /* RiveAssets */,
+				AF8013D0289EF2450071C156 /* Extensions */,
 				AF892CD5289AECF500E79D4A /* CustomLaunchScreen */,
 				AF892CB8289AD48E00E79D4A /* AppDelegate.swift */,
 				AF892CBA289AD48E00E79D4A /* SceneDelegate.swift */,
@@ -136,6 +152,9 @@
 			dependencies = (
 			);
 			name = "R - news";
+			packageProductDependencies = (
+				AF8013D7289EFB970071C156 /* RiveRuntime */,
+			);
 			productName = "R - news";
 			productReference = AF892CB5289AD48E00E79D4A /* R - news.app */;
 			productType = "com.apple.product-type.application";
@@ -164,6 +183,9 @@
 				Base,
 			);
 			mainGroup = AF892CAC289AD48E00E79D4A;
+			packageReferences = (
+				AF8013D6289EFB970071C156 /* XCRemoteSwiftPackageReference "rive-ios" */,
+			);
 			productRefGroup = AF892CB6289AD48E00E79D4A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -181,6 +203,7 @@
 				AF892CC5289AD49500E79D4A /* LaunchScreen.storyboard in Resources */,
 				AF892CC2289AD49500E79D4A /* Assets.xcassets in Resources */,
 				AF892CD4289AECB600E79D4A /* news.json in Resources */,
+				AF8013D5289EFADD0071C156 /* RiveAssets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +258,7 @@
 			files = (
 				AF892CCF289AD66000E79D4A /* AnimationVC.swift in Sources */,
 				AF892CBD289AD48E00E79D4A /* ViewController.swift in Sources */,
+				AF8013D2289EF2550071C156 /* View+.swift in Sources */,
 				AF892CB9289AD48E00E79D4A /* AppDelegate.swift in Sources */,
 				AF892CBB289AD48E00E79D4A /* SceneDelegate.swift in Sources */,
 			);
@@ -446,6 +470,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AF8013D6289EFB970071C156 /* XCRemoteSwiftPackageReference "rive-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rive-app/rive-ios";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AF8013D7289EFB970071C156 /* RiveRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF8013D6289EFB970071C156 /* XCRemoteSwiftPackageReference "rive-ios" */;
+			productName = RiveRuntime;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF892CAD289AD48E00E79D4A /* Project object */;
 }

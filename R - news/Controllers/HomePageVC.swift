@@ -78,7 +78,8 @@ class HomePageVC: UIViewController {
             make.top.equalTo(clickLabel).inset(30)
             make.right.left.equalToSuperview().inset(90)
             make.height.equalTo(40)
-    }
+        }
+        
         let signUpButton = UIButton(type: .system)
         signUpButton.setTitle("Sign Up", for: .normal)
         signUpButton.setTitleColor(.white, for: .normal)
@@ -97,7 +98,7 @@ class HomePageVC: UIViewController {
             make.top.equalTo(logInButton).inset(60)
             make.right.left.equalToSuperview().inset(90)
             make.height.equalTo(40)
-    }
+        }
   }
     
     @objc private func logInTapped() {

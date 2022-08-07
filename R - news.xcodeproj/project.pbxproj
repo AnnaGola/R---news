@@ -9,35 +9,34 @@
 /* Begin PBXBuildFile section */
 		9A16E9298A455FC46168CE23 /* Pods_R___news.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0509E8CBEE83740602CF2F8 /* Pods_R___news.framework */; };
 		AF8013D2289EF2550071C156 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8013D1289EF2550071C156 /* View+.swift */; };
-		AF8013D5289EFADD0071C156 /* RiveAssets in Resources */ = {isa = PBXBuildFile; fileRef = AF8013D4289EFADD0071C156 /* RiveAssets */; };
-		AF8013D8289EFB970071C156 /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = AF8013D7289EFB970071C156 /* RiveRuntime */; };
 		AF892CB9289AD48E00E79D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF892CB8289AD48E00E79D4A /* AppDelegate.swift */; };
 		AF892CBB289AD48E00E79D4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF892CBA289AD48E00E79D4A /* SceneDelegate.swift */; };
-		AF892CBD289AD48E00E79D4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF892CBC289AD48E00E79D4A /* ViewController.swift */; };
+		AF892CBD289AD48E00E79D4A /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF892CBC289AD48E00E79D4A /* HomePageVC.swift */; };
 		AF892CC2289AD49500E79D4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF892CC1289AD49500E79D4A /* Assets.xcassets */; };
-		AF892CC5289AD49500E79D4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF892CC3289AD49500E79D4A /* LaunchScreen.storyboard */; };
 		AF892CCF289AD66000E79D4A /* AnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF892CCE289AD66000E79D4A /* AnimationVC.swift */; };
 		AF892CD4289AECB600E79D4A /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = AF892CD3289AECB600E79D4A /* news.json */; };
 		AF99B96C289FDD7E008CE3A7 /* background.json in Resources */ = {isa = PBXBuildFile; fileRef = AF99B96B289FDD7E008CE3A7 /* background.json */; };
 		AF99B96F289FE37E008CE3A7 /* backView.json in Resources */ = {isa = PBXBuildFile; fileRef = AF99B96E289FE37E008CE3A7 /* backView.json */; };
+		AF99B972289FF67A008CE3A7 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF99B971289FF67A008CE3A7 /* SignInVC.swift */; };
+		AF99B974289FF6A1008CE3A7 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF99B973289FF6A1008CE3A7 /* LogInVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4535FB157DCF704A201AB2AA /* Pods-R - news.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R - news.debug.xcconfig"; path = "Target Support Files/Pods-R - news/Pods-R - news.debug.xcconfig"; sourceTree = "<group>"; };
 		6692AAAADC831CBD441BD6B0 /* Pods-R - news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R - news.release.xcconfig"; path = "Target Support Files/Pods-R - news/Pods-R - news.release.xcconfig"; sourceTree = "<group>"; };
 		AF8013D1289EF2550071C156 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
-		AF8013D4289EFADD0071C156 /* RiveAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RiveAssets; sourceTree = "<group>"; };
 		AF892CB5289AD48E00E79D4A /* R - news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "R - news.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF892CB8289AD48E00E79D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF892CBA289AD48E00E79D4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF892CBC289AD48E00E79D4A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF892CBC289AD48E00E79D4A /* HomePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVC.swift; sourceTree = "<group>"; };
 		AF892CC1289AD49500E79D4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AF892CC4289AD49500E79D4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF892CC6289AD49500E79D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF892CCE289AD66000E79D4A /* AnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationVC.swift; sourceTree = "<group>"; };
 		AF892CD3289AECB600E79D4A /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
 		AF99B96B289FDD7E008CE3A7 /* background.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = background.json; sourceTree = "<group>"; };
 		AF99B96E289FE37E008CE3A7 /* backView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = backView.json; sourceTree = "<group>"; };
+		AF99B971289FF67A008CE3A7 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		AF99B973289FF6A1008CE3A7 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		C0509E8CBEE83740602CF2F8 /* Pods_R___news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_R___news.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -47,7 +46,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A16E9298A455FC46168CE23 /* Pods_R___news.framework in Frameworks */,
-				AF8013D8289EFB970071C156 /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,14 +89,12 @@
 		AF892CB7289AD48E00E79D4A /* R - news */ = {
 			isa = PBXGroup;
 			children = (
-				AF8013D4289EFADD0071C156 /* RiveAssets */,
 				AF99B96D289FDE45008CE3A7 /* Application */,
 				AF892CD5289AECF500E79D4A /* CustomLaunchScreen */,
-				AF892CBC289AD48E00E79D4A /* ViewController.swift */,
+				AF99B970289FEC9B008CE3A7 /* Controllers */,
 				AF892CD2289AECA300E79D4A /* AnimationsLottie */,
 				AF8013D0289EF2450071C156 /* Extensions */,
 				AF892CD6289AED1700E79D4A /* Supporting files */,
-				AF892CC6289AD49500E79D4A /* Info.plist */,
 			);
 			path = "R - news";
 			sourceTree = "<group>";
@@ -124,7 +120,7 @@
 		AF892CD6289AED1700E79D4A /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				AF892CC3289AD49500E79D4A /* LaunchScreen.storyboard */,
+				AF892CC6289AD49500E79D4A /* Info.plist */,
 				AF892CC1289AD49500E79D4A /* Assets.xcassets */,
 			);
 			path = "Supporting files";
@@ -137,6 +133,16 @@
 				AF892CBA289AD48E00E79D4A /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		AF99B970289FEC9B008CE3A7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF892CBC289AD48E00E79D4A /* HomePageVC.swift */,
+				AF99B971289FF67A008CE3A7 /* SignInVC.swift */,
+				AF99B973289FF6A1008CE3A7 /* LogInVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FB1622C1A83AD1E8F3EEB980 /* Pods */ = {
@@ -167,7 +173,6 @@
 			);
 			name = "R - news";
 			packageProductDependencies = (
-				AF8013D7289EFB970071C156 /* RiveRuntime */,
 			);
 			productName = "R - news";
 			productReference = AF892CB5289AD48E00E79D4A /* R - news.app */;
@@ -215,11 +220,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF99B96C289FDD7E008CE3A7 /* background.json in Resources */,
-				AF892CC5289AD49500E79D4A /* LaunchScreen.storyboard in Resources */,
 				AF892CC2289AD49500E79D4A /* Assets.xcassets in Resources */,
 				AF99B96F289FE37E008CE3A7 /* backView.json in Resources */,
 				AF892CD4289AECB600E79D4A /* news.json in Resources */,
-				AF8013D5289EFADD0071C156 /* RiveAssets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF892CCF289AD66000E79D4A /* AnimationVC.swift in Sources */,
-				AF892CBD289AD48E00E79D4A /* ViewController.swift in Sources */,
+				AF892CBD289AD48E00E79D4A /* HomePageVC.swift in Sources */,
+				AF99B972289FF67A008CE3A7 /* SignInVC.swift in Sources */,
+				AF99B974289FF6A1008CE3A7 /* LogInVC.swift in Sources */,
 				AF8013D2289EF2550071C156 /* View+.swift in Sources */,
 				AF892CB9289AD48E00E79D4A /* AppDelegate.swift in Sources */,
 				AF892CBB289AD48E00E79D4A /* SceneDelegate.swift in Sources */,
@@ -281,17 +286,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		AF892CC3289AD49500E79D4A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF892CC4289AD49500E79D4A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AF892CC7289AD49500E79D4A /* Debug */ = {
@@ -418,9 +412,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 36FB83P3NL;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "R - news/Info.plist";
+				INFOPLIST_FILE = "R - news/Supporting files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = AnimationVC;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -446,9 +441,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 36FB83P3NL;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "R - news/Info.plist";
+				INFOPLIST_FILE = "R - news/Supporting files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = AnimationVC;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -497,14 +493,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		AF8013D7289EFB970071C156 /* RiveRuntime */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AF8013D6289EFB970071C156 /* XCRemoteSwiftPackageReference "rive-ios" */;
-			productName = RiveRuntime;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF892CAD289AD48E00E79D4A /* Project object */;
 }

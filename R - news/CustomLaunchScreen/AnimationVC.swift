@@ -28,7 +28,7 @@ class AnimationVC: UIViewController {
         view.addSubview(viewAnimation)
         viewAnimation.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.right.left.equalToSuperview().inset(80)
+            make.right.left.equalToSuperview().inset(70)
         }
         
         timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { timer in
@@ -43,7 +43,7 @@ class AnimationVC: UIViewController {
         } completion: { done in
             if done {
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.3) {
-                     let vc = ViewController()
+                     let vc = HomePageVC()
                     vc.modalTransitionStyle = .crossDissolve
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true)

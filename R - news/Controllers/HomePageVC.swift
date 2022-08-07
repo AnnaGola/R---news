@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Lottie
 
-class ViewController: UIViewController {
+class HomePageVC: UIViewController {
 
     let viewAnimation: AnimationView = {
         let viewAnimation = AnimationView(name: "backView")
@@ -51,8 +51,9 @@ class ViewController: UIViewController {
         }
         
         let clickLabel = UILabel()
-        clickLabel.text = "One click apart from the news"
-        clickLabel.font = UIFont(name: "Helvetica", size: 16)
+        clickLabel.text = "One click apart from the safe news"
+        clickLabel.font = UIFont(name: "Helvetica", size: 14)
+        clickLabel.alpha = 0.7
         clickLabel.textAlignment = .center
         view.addSubview(clickLabel)
         clickLabel.snp.makeConstraints { make in
@@ -66,9 +67,15 @@ class ViewController: UIViewController {
         logInButton.titleLabel?.font = UIFont(name: "Helvetica", size: 19)
         logInButton.backgroundColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
         logInButton.layer.cornerRadius = 7
+        logInButton.layer.shadowColor = CGColor(red: 0, green: 3/255, blue: 30/255, alpha: 0.4)
+        logInButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        logInButton.layer.shadowOpacity = 1.0
+        logInButton.layer.shadowRadius = 3
+        logInButton.layer.masksToBounds = false
+        logInButton.addTarget(self, action: #selector(logInTapped), for: .touchUpInside)
         view.addSubview(logInButton)
         logInButton.snp.makeConstraints { make in
-            make.top.equalTo(clickLabel).inset(40)
+            make.top.equalTo(clickLabel).inset(30)
             make.right.left.equalToSuperview().inset(90)
             make.height.equalTo(40)
     }
@@ -78,7 +85,13 @@ class ViewController: UIViewController {
         signUpButton.titleLabel?.font = UIFont(name: "Helvetica", size: 19)
         signUpButton.backgroundColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
         signUpButton.layer.cornerRadius = 7
+        signUpButton.layer.shadowColor = CGColor(red: 0, green: 3/255, blue: 30/255, alpha: 0.4)
+        signUpButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        signUpButton.layer.shadowOpacity = 1.0
+        signUpButton.layer.shadowRadius = 3
+        signUpButton.layer.masksToBounds = false
         signUpButton.alpha = 0.5
+        signUpButton.addTarget(self, action: #selector(signInTapped), for: .touchUpInside)
         view.addSubview(signUpButton)
         signUpButton.snp.makeConstraints { make in
             make.top.equalTo(logInButton).inset(60)
@@ -86,4 +99,15 @@ class ViewController: UIViewController {
             make.height.equalTo(40)
     }
   }
+    
+    @objc private func logInTapped() {
+        let vc = LogInVC()
+        present(vc, animated: true)
+    }
+    
+    @objc private func signInTapped() {
+        let vc = SignInVC()
+        present(vc, animated: true)
+    }
 }
+

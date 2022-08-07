@@ -19,25 +19,30 @@ class HomePageVC: UIViewController {
         return viewAnimation
     }()
     
+    let welcomeAnimation: AnimationView = {
+        let welcomeAnimation = AnimationView(name: "hello")
+        welcomeAnimation.loopMode = .autoReverse
+        welcomeAnimation.alpha = 0.8
+        welcomeAnimation.animationSpeed = 0.7
+        welcomeAnimation.play()
+        return welcomeAnimation
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHomePage()
         view.backgroundColor = #colorLiteral(red: 0.9724035859, green: 0.9314741492, blue: 0.9023552537, alpha: 1)
         view.insertSubview(viewAnimation, at: 0)
+        view.insertSubview(welcomeAnimation, at: 1)
+        welcomeAnimation.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(-350)
+            make.right.equalToSuperview().inset(70)
+            make.left.equalToSuperview().inset(-27)
+        }
     }
     
     private func setupHomePage() {
         
-        let welcomeLabel = UILabel()
-        welcomeLabel.text = "Welcome!"
-        welcomeLabel.textAlignment = .left
-        welcomeLabel.font = UIFont(name: "Helvetica", size: 22)
-        view.addSubview(welcomeLabel)
-        welcomeLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(165)
-            make.right.left.equalToSuperview().inset(70)
-        }
-
         let bodyLabel = UILabel()
         bodyLabel.text = "We have created this safe place just for you, where you can read news that are relaitable and relevant."
         bodyLabel.numberOfLines = 0
@@ -46,7 +51,7 @@ class HomePageVC: UIViewController {
         bodyLabel.alpha = 0.8
         view.addSubview(bodyLabel)
         bodyLabel.snp.makeConstraints { make in
-            make.top.equalTo(welcomeLabel).inset(70)
+            make.top.equalToSuperview().inset(280)
             make.left.right.equalToSuperview().inset(70)
         }
         
@@ -65,7 +70,7 @@ class HomePageVC: UIViewController {
         logInButton.setTitle("Log In", for: .normal)
         logInButton.setTitleColor(.white, for: .normal)
         logInButton.titleLabel?.font = UIFont(name: "Helvetica", size: 19)
-        logInButton.backgroundColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
+        logInButton.backgroundColor = #colorLiteral(red: 0.5215686275, green: 0.6980392157, blue: 0.5803921569, alpha: 1)
         logInButton.layer.cornerRadius = 7
         logInButton.layer.shadowColor = CGColor(red: 0, green: 3/255, blue: 30/255, alpha: 0.4)
         logInButton.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -84,7 +89,7 @@ class HomePageVC: UIViewController {
         signUpButton.setTitle("Sign Up", for: .normal)
         signUpButton.setTitleColor(.white, for: .normal)
         signUpButton.titleLabel?.font = UIFont(name: "Helvetica", size: 19)
-        signUpButton.backgroundColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
+        signUpButton.backgroundColor = #colorLiteral(red: 0.5215686275, green: 0.6980392157, blue: 0.5803921569, alpha: 1)
         signUpButton.layer.cornerRadius = 7
         signUpButton.layer.shadowColor = CGColor(red: 0, green: 3/255, blue: 30/255, alpha: 0.4)
         signUpButton.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -104,11 +109,13 @@ class HomePageVC: UIViewController {
     @objc private func logInTapped() {
         let vc = LogInVC()
         present(vc, animated: true)
+        print("tapped")
     }
     
     @objc private func signInTapped() {
         let vc = SignInVC()
         present(vc, animated: true)
+        print("tapped")
     }
 }
 

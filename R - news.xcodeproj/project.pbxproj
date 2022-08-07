@@ -19,6 +19,7 @@
 		AF99B96F289FE37E008CE3A7 /* backView.json in Resources */ = {isa = PBXBuildFile; fileRef = AF99B96E289FE37E008CE3A7 /* backView.json */; };
 		AF99B972289FF67A008CE3A7 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF99B971289FF67A008CE3A7 /* SignInVC.swift */; };
 		AF99B974289FF6A1008CE3A7 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF99B973289FF6A1008CE3A7 /* LogInVC.swift */; };
+		AF99B97E28A0111B008CE3A7 /* hello.json in Resources */ = {isa = PBXBuildFile; fileRef = AF99B97D28A0111B008CE3A7 /* hello.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		AF99B96E289FE37E008CE3A7 /* backView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = backView.json; sourceTree = "<group>"; };
 		AF99B971289FF67A008CE3A7 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		AF99B973289FF6A1008CE3A7 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
+		AF99B97D28A0111B008CE3A7 /* hello.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hello.json; sourceTree = "<group>"; };
 		C0509E8CBEE83740602CF2F8 /* Pods_R___news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_R___news.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				AF99B96E289FE37E008CE3A7 /* backView.json */,
+				AF99B97D28A0111B008CE3A7 /* hello.json */,
 				AF892CD3289AECB600E79D4A /* news.json */,
 				AF99B96B289FDD7E008CE3A7 /* background.json */,
 			);
@@ -221,6 +224,7 @@
 			files = (
 				AF99B96C289FDD7E008CE3A7 /* background.json in Resources */,
 				AF892CC2289AD49500E79D4A /* Assets.xcassets in Resources */,
+				AF99B97E28A0111B008CE3A7 /* hello.json in Resources */,
 				AF99B96F289FE37E008CE3A7 /* backView.json in Resources */,
 				AF892CD4289AECB600E79D4A /* news.json in Resources */,
 			);

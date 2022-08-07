@@ -8,24 +8,22 @@
 import UIKit
 import SnapKit
 import Lottie
-import RiveRuntime
 
 class ViewController: UIViewController {
-   
-    var rive = RiveViewModel(fileName: "shapes")
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let riveView = rive.createRiveView()
-        view.addSubview(riveView)
-        riveView.frame = view.frame
-    }
+
+    let viewAnimation: AnimationView = {
+        let viewAnimation = AnimationView(name: "backView")
+        viewAnimation.loopMode = .loop
+        viewAnimation.alpha = 0.8
+        viewAnimation.play()
+        return viewAnimation
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHomePage()
         view.backgroundColor = #colorLiteral(red: 0.9724035859, green: 0.9314741492, blue: 0.9023552537, alpha: 1)
-        view.blurBackgroung(style: .light)
+        view.insertSubview(viewAnimation, at: 0)
     }
     
     private func setupHomePage() {

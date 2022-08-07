@@ -18,6 +18,8 @@
 		AF892CC5289AD49500E79D4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF892CC3289AD49500E79D4A /* LaunchScreen.storyboard */; };
 		AF892CCF289AD66000E79D4A /* AnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF892CCE289AD66000E79D4A /* AnimationVC.swift */; };
 		AF892CD4289AECB600E79D4A /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = AF892CD3289AECB600E79D4A /* news.json */; };
+		AF99B96C289FDD7E008CE3A7 /* background.json in Resources */ = {isa = PBXBuildFile; fileRef = AF99B96B289FDD7E008CE3A7 /* background.json */; };
+		AF99B96F289FE37E008CE3A7 /* backView.json in Resources */ = {isa = PBXBuildFile; fileRef = AF99B96E289FE37E008CE3A7 /* backView.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		AF892CC6289AD49500E79D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF892CCE289AD66000E79D4A /* AnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationVC.swift; sourceTree = "<group>"; };
 		AF892CD3289AECB600E79D4A /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
+		AF99B96B289FDD7E008CE3A7 /* background.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = background.json; sourceTree = "<group>"; };
+		AF99B96E289FE37E008CE3A7 /* backView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = backView.json; sourceTree = "<group>"; };
 		C0509E8CBEE83740602CF2F8 /* Pods_R___news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_R___news.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,12 +92,11 @@
 			isa = PBXGroup;
 			children = (
 				AF8013D4289EFADD0071C156 /* RiveAssets */,
-				AF8013D0289EF2450071C156 /* Extensions */,
+				AF99B96D289FDE45008CE3A7 /* Application */,
 				AF892CD5289AECF500E79D4A /* CustomLaunchScreen */,
-				AF892CB8289AD48E00E79D4A /* AppDelegate.swift */,
-				AF892CBA289AD48E00E79D4A /* SceneDelegate.swift */,
 				AF892CBC289AD48E00E79D4A /* ViewController.swift */,
 				AF892CD2289AECA300E79D4A /* AnimationsLottie */,
+				AF8013D0289EF2450071C156 /* Extensions */,
 				AF892CD6289AED1700E79D4A /* Supporting files */,
 				AF892CC6289AD49500E79D4A /* Info.plist */,
 			);
@@ -103,7 +106,9 @@
 		AF892CD2289AECA300E79D4A /* AnimationsLottie */ = {
 			isa = PBXGroup;
 			children = (
+				AF99B96E289FE37E008CE3A7 /* backView.json */,
 				AF892CD3289AECB600E79D4A /* news.json */,
+				AF99B96B289FDD7E008CE3A7 /* background.json */,
 			);
 			path = AnimationsLottie;
 			sourceTree = "<group>";
@@ -123,6 +128,15 @@
 				AF892CC1289AD49500E79D4A /* Assets.xcassets */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		AF99B96D289FDE45008CE3A7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				AF892CB8289AD48E00E79D4A /* AppDelegate.swift */,
+				AF892CBA289AD48E00E79D4A /* SceneDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		FB1622C1A83AD1E8F3EEB980 /* Pods */ = {
@@ -200,8 +214,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF99B96C289FDD7E008CE3A7 /* background.json in Resources */,
 				AF892CC5289AD49500E79D4A /* LaunchScreen.storyboard in Resources */,
 				AF892CC2289AD49500E79D4A /* Assets.xcassets in Resources */,
+				AF99B96F289FE37E008CE3A7 /* backView.json in Resources */,
 				AF892CD4289AECB600E79D4A /* news.json in Resources */,
 				AF8013D5289EFADD0071C156 /* RiveAssets in Resources */,
 			);

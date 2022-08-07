@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 import Lottie
 
 class AnimationVC: UIViewController {
@@ -15,26 +16,24 @@ class AnimationVC: UIViewController {
     let viewAnimation: AnimationView = {
         let viewAnimation = AnimationView(name: "news")
         viewAnimation.animationSpeed = 1.5
+        viewAnimation.contentMode = .scaleAspectFit
+        viewAnimation.play()
         return viewAnimation
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        view.backgroundColor = #colorLiteral(red: 0.9724035859, green: 0.9314741492, blue: 0.9023552537, alpha: 1)
+        view.addSubview(viewAnimation)
+        viewAnimation.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.right.left.equalToSuperview().inset(80)
+        }
+        
         timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { timer in
             self.animateView(self.viewAnimation)
         })
-        
-        view.backgroundColor = #colorLiteral(red: 0.9724035859, green: 0.9314741492, blue: 0.9023552537, alpha: 1)
-        viewAnimation.contentMode = .scaleAspectFit
-        viewAnimation.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(viewAnimation)
-        viewAnimation.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        viewAnimation.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        viewAnimation.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        viewAnimation.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        
-        viewAnimation.play()
     }
     
     func animateView(_ viewAnimate: AnimationView) {

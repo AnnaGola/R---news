@@ -13,8 +13,6 @@ class SignInVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.880905807, green: 0.8205495477, blue: 0.8253093958, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.9724035859, green: 0.9314741492, blue: 0.9023552537, alpha: 1)
     }
-    
-
 }

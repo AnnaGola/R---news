@@ -51,7 +51,7 @@ class HomePageVC: UIViewController {
         bodyLabel.alpha = 0.8
         view.addSubview(bodyLabel)
         bodyLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(280)
+            make.top.equalToSuperview().inset(240)
             make.left.right.equalToSuperview().inset(70)
         }
         

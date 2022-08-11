@@ -109,13 +109,11 @@ class HomePageVC: UIViewController {
     @objc private func logInTapped() {
         let vc = LogInVC()
         present(vc, animated: true)
-        print("tapped")
     }
     
     @objc private func signInTapped() {
         let vc = SignInVC()
         present(vc, animated: true)
-        print("tapped")
     }
 }
 

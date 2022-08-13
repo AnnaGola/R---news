@@ -32,7 +32,8 @@ class LogInVC: UIViewController {
         }
         
         let validationLabel = UILabel()
-        validationLabel.text = " validation ok or not ok"
+        validationLabel.text = " valid"
+        validationLabel.textColor = .green
         validationLabel.font = UIFont(name: "Helvetica", size: 14)
         validationLabel.numberOfLines = 1
         validationLabel.alpha = 0.5
@@ -44,15 +45,14 @@ class LogInVC: UIViewController {
         }
         
         let emailTF = UITextField()
-        emailTF.backgroundColor = .white
-        emailTF.layer.cornerRadius = 7
+        emailTF.borderStyle = .roundedRect
         emailTF.layer.shadowColor = CGColor(red: 0, green: 3/255, blue: 30/255, alpha: 0.4)
         emailTF.layer.shadowOffset = CGSize(width: 0, height: 2)
         emailTF.layer.shadowOpacity = 1.0
         emailTF.layer.shadowRadius = 3
         emailTF.layer.masksToBounds = false
         emailTF.placeholder = " email"
-        emailTF.alpha = 0.7
+        emailTF.alpha = 0.5
         view.addSubview(emailTF)
         emailTF.snp.makeConstraints { make in
             make.top.equalTo(validationLabel).inset(20)
@@ -61,7 +61,8 @@ class LogInVC: UIViewController {
         }
         
         let validationLabelTwo = UILabel()
-        validationLabelTwo.text = " validation ok or not ok"
+        validationLabelTwo.text = " valid"
+        validationLabelTwo.textColor = .green
         validationLabelTwo.font = UIFont(name: "Helvetica", size: 14)
         validationLabelTwo.numberOfLines = 1
         validationLabelTwo.alpha = 0.5
@@ -73,14 +74,13 @@ class LogInVC: UIViewController {
         }
         
         let passwordTF = UITextField()
-        passwordTF.backgroundColor = .white
-        passwordTF.layer.cornerRadius = 7
+        passwordTF.borderStyle = .roundedRect
         passwordTF.layer.shadowColor = CGColor(red: 0, green: 3/255, blue: 30/255, alpha: 0.4)
         passwordTF.layer.shadowOffset = CGSize(width: 0, height: 2)
         passwordTF.layer.shadowOpacity = 1.0
         passwordTF.layer.shadowRadius = 3
         passwordTF.layer.masksToBounds = false
-        passwordTF.alpha = 0.7
+        passwordTF.alpha = 0.5
         passwordTF.isSecureTextEntry = true
         passwordTF.placeholder = " password"
         view.addSubview(passwordTF)

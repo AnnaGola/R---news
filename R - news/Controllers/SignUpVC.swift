@@ -83,7 +83,7 @@ class SignUpVC: UIViewController {
     }
     
     func setupSignIn() {
-        signUpLabel.text = "Sign In"
+        signUpLabel.text = "Sign Up"
         signUpLabel.font = UIFont(name: "Helvetica", size: 22)
         signUpLabel.textAlignment = .left
         view.addSubview(signUpLabel)
@@ -247,7 +247,11 @@ class SignUpVC: UIViewController {
             signUpLabel.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
             viewAnimation.loopMode = .loop
             viewAnimation.alpha = 1
+            viewAnimation.animationSpeed = 0.8
             viewAnimation.play()
+        } else {
+            signUpLabel.text = "Sign Up"
+            setAlert(title: "Not enough information", message: "Please make all requered fields light up green with your personal information!")
         }
     }
 }

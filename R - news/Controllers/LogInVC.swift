@@ -10,16 +10,23 @@ import SnapKit
 
 
 class LogInVC: UIViewController {
-
+    
+//MARK: - Properties
+    let logInLabel = UILabel()
+    let validationLabel = UILabel()
+    let emailTF = UITextField()
+    let passwordTF = UITextField()
+    let validationLabelTwo = UILabel()
+    
+//MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9724035859, green: 0.9314741492, blue: 0.9023552537, alpha: 1)
         setupLogIn()
     }
     
+//MARK: - SetUps
     private func setupLogIn() {
-        
-        let logInLabel = UILabel()
         logInLabel.text = "Log in"
         logInLabel.font = UIFont(name: "Helvetica", size: 22)
         logInLabel.textAlignment = .left
@@ -29,7 +36,6 @@ class LogInVC: UIViewController {
             make.right.left.equalToSuperview().inset(70)
         }
         
-        let validationLabel = UILabel()
         validationLabel.text = " valid"
         validationLabel.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
         validationLabel.font = UIFont(name: "Helvetica", size: 14)
@@ -42,7 +48,6 @@ class LogInVC: UIViewController {
             make.right.left.equalToSuperview().inset(70)
         }
         
-        let emailTF = UITextField()
         emailTF.borderStyle = .roundedRect
         emailTF.layer.shadowColor = CGColor(red: 0, green: 3/255, blue: 30/255, alpha: 0.4)
         emailTF.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -58,7 +63,6 @@ class LogInVC: UIViewController {
             make.height.equalTo(40)
         }
         
-        let validationLabelTwo = UILabel()
         validationLabelTwo.text = " valid"
         validationLabelTwo.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
         validationLabelTwo.font = UIFont(name: "Helvetica", size: 14)
@@ -67,11 +71,10 @@ class LogInVC: UIViewController {
         validationLabelTwo.textAlignment = .left
         view.addSubview(validationLabelTwo)
         validationLabelTwo.snp.makeConstraints { make in
-            make.top.equalTo(emailTF).inset(70)
+            make.top.equalTo(emailTF).inset(50)
             make.right.left.equalToSuperview().inset(70)
         }
         
-        let passwordTF = UITextField()
         passwordTF.borderStyle = .roundedRect
         passwordTF.layer.shadowColor = CGColor(red: 0, green: 3/255, blue: 30/255, alpha: 0.4)
         passwordTF.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -89,7 +92,7 @@ class LogInVC: UIViewController {
         }
         
         let logInButton = UIButton(type: .system)
-        logInButton.setTitle("Enter in my account", for: .normal)
+        logInButton.setTitle("Enter my account", for: .normal)
         logInButton.setTitleColor(.white, for: .normal)
         logInButton.titleLabel?.font = UIFont(name: "Helvetica", size: 19)
         logInButton.backgroundColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
@@ -109,7 +112,30 @@ class LogInVC: UIViewController {
     }
     
     @objc private func enterInAccount() {
-        print("enter in my account")
+        let email = emailTF.text ?? ""
+        let password = passwordTF.text ?? ""
+        let user = findUserInDataBase(email: email, password: password)
+        
+        if user == nil {
+            logInLabel.text = "User not found"
+            logInLabel.textColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
+        } else if user?.email == email && user?.password == password {
+            let navVC = UINavigationController(rootViewController: NewsPageTVC())
+            navVC.modalPresentationStyle = .fullScreen
+            self.present(navVC, animated: true)
+        }
     }
     
+    func findUserInDataBase(email: String, password: String) -> User? {
+        let dataBase = DataBase.shared.users
+        
+        print(dataBase)
+        
+        for user in dataBase {
+            if user.email == email && user.password == password {
+                return user
+            }
+        }
+        return nil
+    }
 }

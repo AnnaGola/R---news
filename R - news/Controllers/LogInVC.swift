@@ -27,13 +27,13 @@ class LogInVC: UIViewController {
         label.textAlignment = .left
         view.addSubview(label)
         label.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(110)
+            make.top.equalToSuperview().inset(80)
             make.right.left.equalToSuperview().inset(70)
         }
         
         let validationLabel = UILabel()
         validationLabel.text = " valid"
-        validationLabel.textColor = .green
+        validationLabel.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
         validationLabel.font = UIFont(name: "Helvetica", size: 14)
         validationLabel.numberOfLines = 1
         validationLabel.alpha = 0.5
@@ -62,7 +62,7 @@ class LogInVC: UIViewController {
         
         let validationLabelTwo = UILabel()
         validationLabelTwo.text = " valid"
-        validationLabelTwo.textColor = .green
+        validationLabelTwo.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
         validationLabelTwo.font = UIFont(name: "Helvetica", size: 14)
         validationLabelTwo.numberOfLines = 1
         validationLabelTwo.alpha = 0.5

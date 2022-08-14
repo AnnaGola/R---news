@@ -7,12 +7,11 @@
 
 import UIKit
 import SnapKit
-import Lottie
 
 class SignUpVC: UIViewController {
 
 //MARK: - Properties
-    let label = UILabel()
+    let signUpLabel = UILabel()
     let nameValidationLabel = UILabel()
     let nameTF = UITextField()
     let ageValidationLabel = UILabel()
@@ -22,6 +21,9 @@ class SignUpVC: UIViewController {
     let emailTF = UITextField()
     let passwordValidationLabel = UILabel()
     let validNickname: String.ValidTypes = .nickname
+    let validAge: String.ValidTypes = .age
+    let validEmail: String.ValidTypes = .email
+    let validPassword: String.ValidTypes = .password
     
     
 //MARK: - ViewDidLoad
@@ -52,13 +54,13 @@ class SignUpVC: UIViewController {
             results = text
         }
         textField.text = results
-        
+
         if results.validOrNotValid(validType: validType) {
-            nameValidationLabel.text = validText
-            nameValidationLabel.textColor = .green
+            label.text = validText
+            label.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
         } else {
-            nameValidationLabel.text = wrongText
-            nameValidationLabel.textColor = .red
+            label.text = wrongText
+            label.textColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
         }
     }
     
@@ -70,11 +72,11 @@ class SignUpVC: UIViewController {
     }
     
     func setupSignIn() {
-        label.text = "Sign In"
-        label.font = UIFont(name: "Helvetica", size: 22)
-        label.textAlignment = .left
-        view.addSubview(label)
-        label.snp.makeConstraints { make in
+        signUpLabel.text = "Sign In"
+        signUpLabel.font = UIFont(name: "Helvetica", size: 22)
+        signUpLabel.textAlignment = .left
+        view.addSubview(signUpLabel)
+        signUpLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(80)
             make.right.left.equalToSuperview().inset(70)
         }
@@ -88,7 +90,7 @@ class SignUpVC: UIViewController {
         nameValidationLabel.textAlignment = .left
         view.addSubview(nameValidationLabel)
         nameValidationLabel.snp.makeConstraints { make in
-            make.top.equalTo(label).inset(50)
+            make.top.equalTo(signUpLabel).inset(50)
             make.right.left.equalToSuperview().inset(70)
         }
         
@@ -218,43 +220,3 @@ class SignUpVC: UIViewController {
         print("Create account")
     }
 }
-
-//MARK: - Extension
-extension SignUpVC: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        switch textField {
-        case nameTF:
-            setTextFields(textField: nameTF,
-                          label: nameValidationLabel,
-                          validType: validNickname,
-                          validText: "This nickname is available",
-                          wrongText: "Only a-z or A-Z, at least one digit and min 6 characters",
-                          string: string,
-                          range: range)
-            
-        case ageTF:
-            setTextFields(textField: ageTF,
-                          label: nameValidationLabel,
-                          validType: validNickname,
-                          validText: "Allowed to continue",
-                          wrongText: "You shall not pass",
-                          string: string,
-                          range: range)
-        default:
-            break
-        }
-        return false
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        nameTF.resignFirstResponder()
-        ageTF.resignFirstResponder()
-        emailTF.resignFirstResponder()
-        passwordTF.resignFirstResponder()
-        return true
-    }
-    
-}
-

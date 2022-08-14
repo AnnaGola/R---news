@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import Lottie
 
 
 class LogInVC: UIViewController {

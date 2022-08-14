@@ -16,9 +16,11 @@
 		AF892CD4289AECB600E79D4A /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = AF892CD3289AECB600E79D4A /* news.json */; };
 		AF99B96C289FDD7E008CE3A7 /* background.json in Resources */ = {isa = PBXBuildFile; fileRef = AF99B96B289FDD7E008CE3A7 /* background.json */; };
 		AF99B96F289FE37E008CE3A7 /* backView.json in Resources */ = {isa = PBXBuildFile; fileRef = AF99B96E289FE37E008CE3A7 /* backView.json */; };
-		AF99B972289FF67A008CE3A7 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF99B971289FF67A008CE3A7 /* SignInVC.swift */; };
+		AF99B972289FF67A008CE3A7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF99B971289FF67A008CE3A7 /* SignUpVC.swift */; };
 		AF99B974289FF6A1008CE3A7 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF99B973289FF6A1008CE3A7 /* LogInVC.swift */; };
 		AF99B97E28A0111B008CE3A7 /* hello.json in Resources */ = {isa = PBXBuildFile; fileRef = AF99B97D28A0111B008CE3A7 /* hello.json */; };
+		AFE83DA128A8D8F200DB1130 /* SignUp+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE83DA028A8D8F200DB1130 /* SignUp+.swift */; };
+		AFE83DA328A8E7C300DB1130 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE83DA228A8E7C300DB1130 /* String+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +36,11 @@
 		AF892CD3289AECB600E79D4A /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
 		AF99B96B289FDD7E008CE3A7 /* background.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = background.json; sourceTree = "<group>"; };
 		AF99B96E289FE37E008CE3A7 /* backView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = backView.json; sourceTree = "<group>"; };
-		AF99B971289FF67A008CE3A7 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		AF99B971289FF67A008CE3A7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		AF99B973289FF6A1008CE3A7 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		AF99B97D28A0111B008CE3A7 /* hello.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hello.json; sourceTree = "<group>"; };
+		AFE83DA028A8D8F200DB1130 /* SignUp+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUp+.swift"; sourceTree = "<group>"; };
+		AFE83DA228A8E7C300DB1130 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		C0509E8CBEE83740602CF2F8 /* Pods_R___news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_R___news.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -63,6 +67,8 @@
 		AF8013D0289EF2450071C156 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AFE83DA028A8D8F200DB1130 /* SignUp+.swift */,
+				AFE83DA228A8E7C300DB1130 /* String+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -139,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				AF892CBC289AD48E00E79D4A /* HomePageVC.swift */,
-				AF99B971289FF67A008CE3A7 /* SignInVC.swift */,
+				AF99B971289FF67A008CE3A7 /* SignUpVC.swift */,
 				AF99B973289FF6A1008CE3A7 /* LogInVC.swift */,
 			);
 			path = Controllers;
@@ -278,7 +284,9 @@
 			files = (
 				AF892CCF289AD66000E79D4A /* AnimationVC.swift in Sources */,
 				AF892CBD289AD48E00E79D4A /* HomePageVC.swift in Sources */,
-				AF99B972289FF67A008CE3A7 /* SignInVC.swift in Sources */,
+				AFE83DA328A8E7C300DB1130 /* String+.swift in Sources */,
+				AFE83DA128A8D8F200DB1130 /* SignUp+.swift in Sources */,
+				AF99B972289FF67A008CE3A7 /* SignUpVC.swift in Sources */,
 				AF99B974289FF6A1008CE3A7 /* LogInVC.swift in Sources */,
 				AF892CB9289AD48E00E79D4A /* AppDelegate.swift in Sources */,
 				AF892CBB289AD48E00E79D4A /* SceneDelegate.swift in Sources */,

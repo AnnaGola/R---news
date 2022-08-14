@@ -112,7 +112,7 @@ class HomePageVC: UIViewController {
     }
     
     @objc private func signInTapped() {
-        let vc = SignInVC()
+        let vc = SignUpVC()
         present(vc, animated: true)
     }
 }

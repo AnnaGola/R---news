@@ -13,10 +13,10 @@ class LogInVC: UIViewController {
     
 //MARK: - Properties
     let logInLabel = UILabel()
-    let validationLabel = UILabel()
+    let emailValidationLabel = UILabel()
     let emailTF = UITextField()
     let passwordTF = UITextField()
-    let validationLabelTwo = UILabel()
+    let passwordValidationLabel = UILabel()
     
 //MARK: - ViewDidLoad
     override func viewDidLoad() {
@@ -36,14 +36,14 @@ class LogInVC: UIViewController {
             make.right.left.equalToSuperview().inset(70)
         }
         
-        validationLabel.text = " valid"
-        validationLabel.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
-        validationLabel.font = UIFont(name: "Helvetica", size: 14)
-        validationLabel.numberOfLines = 1
-        validationLabel.alpha = 0.5
-        validationLabel.textAlignment = .left
-        view.addSubview(validationLabel)
-        validationLabel.snp.makeConstraints { make in
+        emailValidationLabel.text = " valid"
+        emailValidationLabel.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
+        emailValidationLabel.font = UIFont(name: "Helvetica", size: 14)
+        emailValidationLabel.numberOfLines = 1
+        emailValidationLabel.alpha = 0.5
+        emailValidationLabel.textAlignment = .left
+        view.addSubview(emailValidationLabel)
+        emailValidationLabel.snp.makeConstraints { make in
             make.top.equalTo(logInLabel).inset(50)
             make.right.left.equalToSuperview().inset(70)
         }
@@ -58,19 +58,19 @@ class LogInVC: UIViewController {
         emailTF.alpha = 0.5
         view.addSubview(emailTF)
         emailTF.snp.makeConstraints { make in
-            make.top.equalTo(validationLabel).inset(20)
+            make.top.equalTo(emailValidationLabel).inset(20)
             make.left.right.equalToSuperview().inset(70)
             make.height.equalTo(40)
         }
         
-        validationLabelTwo.text = " valid"
-        validationLabelTwo.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
-        validationLabelTwo.font = UIFont(name: "Helvetica", size: 14)
-        validationLabelTwo.numberOfLines = 1
-        validationLabelTwo.alpha = 0.5
-        validationLabelTwo.textAlignment = .left
-        view.addSubview(validationLabelTwo)
-        validationLabelTwo.snp.makeConstraints { make in
+        passwordValidationLabel.text = " valid"
+        passwordValidationLabel.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
+        passwordValidationLabel.font = UIFont(name: "Helvetica", size: 14)
+        passwordValidationLabel.numberOfLines = 1
+        passwordValidationLabel.alpha = 0.5
+        passwordValidationLabel.textAlignment = .left
+        view.addSubview(passwordValidationLabel)
+        passwordValidationLabel.snp.makeConstraints { make in
             make.top.equalTo(emailTF).inset(50)
             make.right.left.equalToSuperview().inset(70)
         }
@@ -86,7 +86,7 @@ class LogInVC: UIViewController {
         passwordTF.placeholder = " password"
         view.addSubview(passwordTF)
         passwordTF.snp.makeConstraints { make in
-            make.top.equalTo(validationLabelTwo).inset(20)
+            make.top.equalTo(passwordValidationLabel).inset(20)
             make.left.right.equalToSuperview().inset(70)
             make.height.equalTo(40)
         }

@@ -35,7 +35,7 @@ extension SignUpVC: UITextFieldDelegate {
                           label: emailValidationLabel,
                           validType: validEmail,
                           validText: "Valid email",
-                          wrongText: "Requered domen is @mail.ru",
+                          wrongText: "Requered form is xxxxxxx@xxxx.xx",
                           string: string,
                           range: range)
             

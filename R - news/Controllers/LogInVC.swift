@@ -40,7 +40,7 @@ class LogInVC: UIViewController {
         emailValidationLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         emailValidationLabel.font = UIFont(name: "Helvetica", size: 14)
         emailValidationLabel.numberOfLines = 1
-        emailValidationLabel.alpha = 0.5
+        emailValidationLabel.alpha = 0.8
         emailValidationLabel.textAlignment = .left
         view.addSubview(emailValidationLabel)
         emailValidationLabel.snp.makeConstraints { make in
@@ -54,8 +54,8 @@ class LogInVC: UIViewController {
         emailTF.layer.shadowOpacity = 1.0
         emailTF.layer.shadowRadius = 3
         emailTF.layer.masksToBounds = false
-        emailTF.placeholder = " email"
-        emailTF.alpha = 0.5
+        emailTF.placeholder = " Email"
+        emailTF.alpha = 0.8
         view.addSubview(emailTF)
         emailTF.snp.makeConstraints { make in
             make.top.equalTo(emailValidationLabel).inset(20)
@@ -67,7 +67,7 @@ class LogInVC: UIViewController {
         passwordValidationLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         passwordValidationLabel.font = UIFont(name: "Helvetica", size: 14)
         passwordValidationLabel.numberOfLines = 1
-        passwordValidationLabel.alpha = 0.5
+        passwordValidationLabel.alpha = 0.8
         passwordValidationLabel.textAlignment = .left
         view.addSubview(passwordValidationLabel)
         passwordValidationLabel.snp.makeConstraints { make in
@@ -81,9 +81,9 @@ class LogInVC: UIViewController {
         passwordTF.layer.shadowOpacity = 1.0
         passwordTF.layer.shadowRadius = 3
         passwordTF.layer.masksToBounds = false
-        passwordTF.alpha = 0.5
+        passwordTF.alpha = 0.8
         passwordTF.isSecureTextEntry = true
-        passwordTF.placeholder = " password"
+        passwordTF.placeholder = " Password"
         view.addSubview(passwordTF)
         passwordTF.snp.makeConstraints { make in
             make.top.equalTo(passwordValidationLabel).inset(20)

@@ -97,7 +97,7 @@ class SignUpVC: UIViewController {
         nameValidationLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         nameValidationLabel.font = UIFont(name: "Helvetica", size: 14)
         nameValidationLabel.numberOfLines = 1
-        nameValidationLabel.alpha = 0.5
+        nameValidationLabel.alpha = 0.8
         nameValidationLabel.textAlignment = .left
         view.addSubview(nameValidationLabel)
         nameValidationLabel.snp.makeConstraints { make in
@@ -111,7 +111,7 @@ class SignUpVC: UIViewController {
         nameTF.layer.shadowOpacity = 1.0
         nameTF.layer.shadowRadius = 3
         nameTF.layer.masksToBounds = false
-        nameTF.alpha = 0.5
+        nameTF.alpha = 0.8
         nameTF.placeholder = " Nickname"
         view.addSubview(nameTF)
         nameTF.snp.makeConstraints { make in
@@ -125,7 +125,7 @@ class SignUpVC: UIViewController {
         ageValidationLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         ageValidationLabel.font = UIFont(name: "Helvetica", size: 14)
         ageValidationLabel.numberOfLines = 1
-        ageValidationLabel.alpha = 0.5
+        ageValidationLabel.alpha = 0.8
         ageValidationLabel.textAlignment = .left
         view.addSubview(ageValidationLabel)
         ageValidationLabel.snp.makeConstraints { make in
@@ -140,7 +140,7 @@ class SignUpVC: UIViewController {
         ageTF.layer.shadowRadius = 3
         ageTF.layer.masksToBounds = false
         ageTF.placeholder = " Current age"
-        ageTF.alpha = 0.5
+        ageTF.alpha = 0.8
         ageTF.keyboardType = .decimalPad
         view.addSubview(ageTF)
         ageTF.snp.makeConstraints { make in
@@ -154,7 +154,7 @@ class SignUpVC: UIViewController {
         emailValidationLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         emailValidationLabel.font = UIFont(name: "Helvetica", size: 14)
         emailValidationLabel.numberOfLines = 1
-        emailValidationLabel.alpha = 0.5
+        emailValidationLabel.alpha = 0.8
         emailValidationLabel.textAlignment = .left
         view.addSubview(emailValidationLabel)
         emailValidationLabel.snp.makeConstraints { make in
@@ -169,7 +169,8 @@ class SignUpVC: UIViewController {
         emailTF.layer.shadowRadius = 3
         emailTF.layer.masksToBounds = false
         emailTF.placeholder = " Email"
-        emailTF.alpha = 0.5
+        emailTF.keyboardType = .emailAddress
+        emailTF.alpha = 0.8
         view.addSubview(emailTF)
         emailTF.snp.makeConstraints { make in
             make.top.equalTo(emailValidationLabel).inset(20)
@@ -182,7 +183,7 @@ class SignUpVC: UIViewController {
         passwordValidationLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         passwordValidationLabel.font = UIFont(name: "Helvetica", size: 14)
         passwordValidationLabel.numberOfLines = 1
-        passwordValidationLabel.alpha = 0.5
+        passwordValidationLabel.alpha = 0.8
         passwordValidationLabel.textAlignment = .left
         view.addSubview(passwordValidationLabel)
         passwordValidationLabel.snp.makeConstraints { make in
@@ -196,7 +197,7 @@ class SignUpVC: UIViewController {
         passwordTF.layer.shadowOpacity = 1.0
         passwordTF.layer.shadowRadius = 3
         passwordTF.layer.masksToBounds = false
-        passwordTF.alpha = 0.5
+        passwordTF.alpha = 0.8
         passwordTF.isSecureTextEntry = true
         passwordTF.placeholder = " Password"
         view.addSubview(passwordTF)
@@ -243,6 +244,7 @@ class SignUpVC: UIViewController {
                                      age: ageText,
                                      email: emailText,
                                      password: passwordText)
+            self.view.endEditing(true)
             signUpLabel.text = "Sign up complited!"
             signUpLabel.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
             viewAnimation.loopMode = .loop

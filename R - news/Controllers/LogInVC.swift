@@ -13,19 +13,18 @@ class LogInVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         view.backgroundColor = #colorLiteral(red: 0.9724035859, green: 0.9314741492, blue: 0.9023552537, alpha: 1)
         setupLogIn()
     }
     
     private func setupLogIn() {
         
-        let label = UILabel()
-        label.text = "Log in"
-        label.font = UIFont(name: "Helvetica", size: 22)
-        label.textAlignment = .left
-        view.addSubview(label)
-        label.snp.makeConstraints { make in
+        let logInLabel = UILabel()
+        logInLabel.text = "Log in"
+        logInLabel.font = UIFont(name: "Helvetica", size: 22)
+        logInLabel.textAlignment = .left
+        view.addSubview(logInLabel)
+        logInLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(80)
             make.right.left.equalToSuperview().inset(70)
         }
@@ -39,7 +38,7 @@ class LogInVC: UIViewController {
         validationLabel.textAlignment = .left
         view.addSubview(validationLabel)
         validationLabel.snp.makeConstraints { make in
-            make.top.equalTo(label).inset(50)
+            make.top.equalTo(logInLabel).inset(50)
             make.right.left.equalToSuperview().inset(70)
         }
         

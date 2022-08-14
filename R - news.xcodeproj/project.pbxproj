@@ -21,6 +21,10 @@
 		AF99B97E28A0111B008CE3A7 /* hello.json in Resources */ = {isa = PBXBuildFile; fileRef = AF99B97D28A0111B008CE3A7 /* hello.json */; };
 		AFE83DA328A8E7C300DB1130 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE83DA228A8E7C300DB1130 /* String+.swift */; };
 		AFE83DA528A9026D00DB1130 /* SignUp+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE83DA428A9026D00DB1130 /* SignUp+.swift */; };
+		AFE83DA828A9073D00DB1130 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE83DA728A9073D00DB1130 /* Manager.swift */; };
+		AFE83DAB28A907F600DB1130 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE83DAA28A907F600DB1130 /* UserModel.swift */; };
+		AFE83DAD28A90D3F00DB1130 /* fireworks.json in Resources */ = {isa = PBXBuildFile; fileRef = AFE83DAC28A90D3F00DB1130 /* fireworks.json */; };
+		AFE9D51C28A911720065BA37 /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = AFE9D51B28A911720065BA37 /* confetti.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		AF99B97D28A0111B008CE3A7 /* hello.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hello.json; sourceTree = "<group>"; };
 		AFE83DA228A8E7C300DB1130 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		AFE83DA428A9026D00DB1130 /* SignUp+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUp+.swift"; sourceTree = "<group>"; };
+		AFE83DA728A9073D00DB1130 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		AFE83DAA28A907F600DB1130 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		AFE83DAC28A90D3F00DB1130 /* fireworks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fireworks.json; sourceTree = "<group>"; };
+		AFE9D51B28A911720065BA37 /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
 		C0509E8CBEE83740602CF2F8 /* Pods_R___news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_R___news.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +102,8 @@
 		AF892CB7289AD48E00E79D4A /* R - news */ = {
 			isa = PBXGroup;
 			children = (
+				AFE83DA928A907E900DB1130 /* Models */,
+				AFE83DA628A9072A00DB1130 /* Services */,
 				AF99B96D289FDE45008CE3A7 /* Application */,
 				AF892CD5289AECF500E79D4A /* CustomLaunchScreen */,
 				AF99B970289FEC9B008CE3A7 /* Controllers */,
@@ -107,6 +117,8 @@
 		AF892CD2289AECA300E79D4A /* AnimationsLottie */ = {
 			isa = PBXGroup;
 			children = (
+				AFE9D51B28A911720065BA37 /* confetti.json */,
+				AFE83DAC28A90D3F00DB1130 /* fireworks.json */,
 				AF99B96E289FE37E008CE3A7 /* backView.json */,
 				AF99B97D28A0111B008CE3A7 /* hello.json */,
 				AF892CD3289AECB600E79D4A /* news.json */,
@@ -149,6 +161,22 @@
 				AF99B973289FF6A1008CE3A7 /* LogInVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AFE83DA628A9072A00DB1130 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AFE83DA728A9073D00DB1130 /* Manager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AFE83DA928A907E900DB1130 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AFE83DAA28A907F600DB1130 /* UserModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FB1622C1A83AD1E8F3EEB980 /* Pods */ = {
@@ -228,7 +256,9 @@
 				AF99B96C289FDD7E008CE3A7 /* background.json in Resources */,
 				AF892CC2289AD49500E79D4A /* Assets.xcassets in Resources */,
 				AF99B97E28A0111B008CE3A7 /* hello.json in Resources */,
+				AFE9D51C28A911720065BA37 /* confetti.json in Resources */,
 				AF99B96F289FE37E008CE3A7 /* backView.json in Resources */,
+				AFE83DAD28A90D3F00DB1130 /* fireworks.json in Resources */,
 				AF892CD4289AECB600E79D4A /* news.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +319,8 @@
 				AF99B972289FF67A008CE3A7 /* SignUpVC.swift in Sources */,
 				AF99B974289FF6A1008CE3A7 /* LogInVC.swift in Sources */,
 				AF892CB9289AD48E00E79D4A /* AppDelegate.swift in Sources */,
+				AFE83DA828A9073D00DB1130 /* Manager.swift in Sources */,
+				AFE83DAB28A907F600DB1130 /* UserModel.swift in Sources */,
 				AF892CBB289AD48E00E79D4A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

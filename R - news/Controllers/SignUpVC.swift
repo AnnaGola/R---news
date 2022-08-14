@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Lottie
 
 class SignUpVC: UIViewController {
 
@@ -25,6 +26,11 @@ class SignUpVC: UIViewController {
     let validEmail: String.ValidTypes = .email
     let validPassword: String.ValidTypes = .password
     
+    let viewAnimation: AnimationView = {
+        let viewAnimation = AnimationView(name: "confetti")
+        return viewAnimation
+    }()
+    
     
 //MARK: - ViewDidLoad
     override func viewDidLoad() {
@@ -32,6 +38,11 @@ class SignUpVC: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.9724035859, green: 0.9314741492, blue: 0.9023552537, alpha: 1)
         setupSignIn()
         setupDelegate()
+        view.insertSubview(viewAnimation, at: 0)
+        viewAnimation.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.right.left.equalToSuperview().inset(70)
+        }
     }
     
     
@@ -83,7 +94,7 @@ class SignUpVC: UIViewController {
         
 //MARK: - Nickname
         nameValidationLabel.text = " Requered"
-        nameValidationLabel.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
+        nameValidationLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         nameValidationLabel.font = UIFont(name: "Helvetica", size: 14)
         nameValidationLabel.numberOfLines = 1
         nameValidationLabel.alpha = 0.5
@@ -111,7 +122,7 @@ class SignUpVC: UIViewController {
         
 //MARK: - Age
         ageValidationLabel.text = " Requered"
-        ageValidationLabel.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
+        ageValidationLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         ageValidationLabel.font = UIFont(name: "Helvetica", size: 14)
         ageValidationLabel.numberOfLines = 1
         ageValidationLabel.alpha = 0.5
@@ -130,6 +141,7 @@ class SignUpVC: UIViewController {
         ageTF.layer.masksToBounds = false
         ageTF.placeholder = " Current age"
         ageTF.alpha = 0.5
+        ageTF.keyboardType = .decimalPad
         view.addSubview(ageTF)
         ageTF.snp.makeConstraints { make in
             make.top.equalTo(ageValidationLabel).inset(20)
@@ -139,7 +151,7 @@ class SignUpVC: UIViewController {
         
 //MARK: - Email
         emailValidationLabel.text = " Requered"
-        emailValidationLabel.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
+        emailValidationLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         emailValidationLabel.font = UIFont(name: "Helvetica", size: 14)
         emailValidationLabel.numberOfLines = 1
         emailValidationLabel.alpha = 0.5
@@ -167,7 +179,7 @@ class SignUpVC: UIViewController {
         
 //MARK: - Password
         passwordValidationLabel.text = " Requered"
-        passwordValidationLabel.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
+        passwordValidationLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         passwordValidationLabel.font = UIFont(name: "Helvetica", size: 14)
         passwordValidationLabel.numberOfLines = 1
         passwordValidationLabel.alpha = 0.5
@@ -217,6 +229,25 @@ class SignUpVC: UIViewController {
     }
     
     @objc private func enterInAccount() {
-        print("Create account")
+        let nicknameText = nameTF.text ?? ""
+        let ageText = ageTF.text ?? ""
+        let emailText = emailTF.text ?? ""
+        let passwordText = passwordTF.text ?? ""
+        
+        if nicknameText.validOrNotValid(validType: validNickname) &&
+            ageText.validOrNotValid(validType: validAge) &&
+            emailText.validOrNotValid(validType: validEmail) &&
+            passwordText.validOrNotValid(validType: validPassword) {
+            
+            DataBase.shared.saveUser(nickname: nicknameText,
+                                     age: ageText,
+                                     email: emailText,
+                                     password: passwordText)
+            signUpLabel.text = "Sign up complited!"
+            signUpLabel.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
+            viewAnimation.loopMode = .loop
+            viewAnimation.alpha = 1
+            viewAnimation.play()
+        }
     }
 }

@@ -36,8 +36,8 @@ class LogInVC: UIViewController {
             make.right.left.equalToSuperview().inset(70)
         }
         
-        emailValidationLabel.text = " valid"
-        emailValidationLabel.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
+        emailValidationLabel.text = " Requered"
+        emailValidationLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         emailValidationLabel.font = UIFont(name: "Helvetica", size: 14)
         emailValidationLabel.numberOfLines = 1
         emailValidationLabel.alpha = 0.5
@@ -63,8 +63,8 @@ class LogInVC: UIViewController {
             make.height.equalTo(40)
         }
         
-        passwordValidationLabel.text = " valid"
-        passwordValidationLabel.textColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)
+        passwordValidationLabel.text = " Requered"
+        passwordValidationLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         passwordValidationLabel.font = UIFont(name: "Helvetica", size: 14)
         passwordValidationLabel.numberOfLines = 1
         passwordValidationLabel.alpha = 0.5
@@ -92,7 +92,7 @@ class LogInVC: UIViewController {
         }
         
         let logInButton = UIButton(type: .system)
-        logInButton.setTitle("Enter my account", for: .normal)
+        logInButton.setTitle("Continue", for: .normal)
         logInButton.setTitleColor(.white, for: .normal)
         logInButton.titleLabel?.font = UIFont(name: "Helvetica", size: 19)
         logInButton.backgroundColor = #colorLiteral(red: 0.5206840634, green: 0.696328342, blue: 0.5796924829, alpha: 1)

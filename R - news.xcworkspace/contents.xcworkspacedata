@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/anna/Desktop/R apps for gitHub/R - news/R - news/Controllers/NewsPageTVC.swift">
-   </FileRef>
-   <FileRef
       location = "group:R - news.xcodeproj">
    </FileRef>
    <FileRef

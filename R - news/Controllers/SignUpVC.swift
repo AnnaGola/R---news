@@ -208,7 +208,6 @@ final class SignUpVC: UIViewController {
             make.height.equalTo(40)
         }
         
-        
 //MARK: - Signup Button
         signUpButton.setTitle("Create account", for: .normal)
         signUpButton.setTitleColor(.white, for: .normal)

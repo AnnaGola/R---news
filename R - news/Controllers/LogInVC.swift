@@ -55,6 +55,7 @@ final class LogInVC: UIViewController {
         emailTF.layer.shadowOpacity = 1.0
         emailTF.layer.shadowRadius = 3
         emailTF.layer.masksToBounds = false
+        emailTF.keyboardType = .emailAddress
         emailTF.placeholder = " Email"
         emailTF.alpha = 0.8
         view.addSubview(emailTF)
@@ -130,9 +131,6 @@ final class LogInVC: UIViewController {
     
     private func findUserInDataBase(email: String, password: String) -> User? {
         let dataBase = DataBase.shared.users
-        
-        print(dataBase)
-        
         for user in dataBase {
             if user.email == email && user.password == password {
                 return user

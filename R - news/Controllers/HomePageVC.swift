@@ -48,7 +48,7 @@ final class HomePageVC: UIViewController {
     
     private func setupHomePage() {
 //MARK: - Setup label
-        bodyLabel.text = "We have created this safe place just for you, where you can read news that are relaitable and relevant."
+        bodyLabel.text = "We have created this safe place just for you, where you can read news that are relatable and relevant."
         bodyLabel.numberOfLines = 0
         bodyLabel.textAlignment = .left
         bodyLabel.font = UIFont(name: "Helvetica", size: 20)

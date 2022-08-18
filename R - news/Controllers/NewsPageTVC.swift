@@ -7,9 +7,7 @@
 
 import UIKit
 
-class NewsPageTVC: UITableViewController {
-
-    let news: [String] = ["anna", "ksusha"]
+final class NewsPageTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +18,7 @@ class NewsPageTVC: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return news.count
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

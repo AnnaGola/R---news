@@ -15,8 +15,8 @@ class DataBase {
         case users
     }
     
-    let defaults = UserDefaults.standard
-    let userKey = Keys.users.rawValue
+    private let defaults = UserDefaults.standard
+    private let userKey = Keys.users.rawValue
     
     var users: [User] {
         get {

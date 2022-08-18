@@ -8,15 +8,15 @@
 import UIKit
 import SnapKit
 
-
-class LogInVC: UIViewController {
+final class LogInVC: UIViewController {
     
 //MARK: - Properties
-    let logInLabel = UILabel()
-    let emailValidationLabel = UILabel()
-    let emailTF = UITextField()
-    let passwordTF = UITextField()
-    let passwordValidationLabel = UILabel()
+    private let logInLabel = UILabel()
+    private let emailValidationLabel = UILabel()
+    private let emailTF = UITextField()
+    private let passwordTF = UITextField()
+    private let passwordValidationLabel = UILabel()
+    private let logInButton = UIButton(type: .system)
     
 //MARK: - ViewDidLoad
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class LogInVC: UIViewController {
         setupLogIn()
     }
     
-//MARK: - SetUps
+//MARK: - Setup Login
     private func setupLogIn() {
         logInLabel.text = "Log in"
         logInLabel.font = UIFont(name: "Helvetica", size: 22)
@@ -36,6 +36,7 @@ class LogInVC: UIViewController {
             make.right.left.equalToSuperview().inset(70)
         }
         
+//MARK: - Email
         emailValidationLabel.text = " Requered"
         emailValidationLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         emailValidationLabel.font = UIFont(name: "Helvetica", size: 14)
@@ -63,6 +64,7 @@ class LogInVC: UIViewController {
             make.height.equalTo(40)
         }
         
+//MARK: - Password
         passwordValidationLabel.text = " Requered"
         passwordValidationLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         passwordValidationLabel.font = UIFont(name: "Helvetica", size: 14)
@@ -90,8 +92,8 @@ class LogInVC: UIViewController {
             make.left.right.equalToSuperview().inset(70)
             make.height.equalTo(40)
         }
-        
-        let logInButton = UIButton(type: .system)
+    
+//MARK: - Button
         logInButton.setTitle("Continue", for: .normal)
         logInButton.setTitleColor(.white, for: .normal)
         logInButton.titleLabel?.font = UIFont(name: "Helvetica", size: 19)
@@ -126,7 +128,7 @@ class LogInVC: UIViewController {
         }
     }
     
-    func findUserInDataBase(email: String, password: String) -> User? {
+    private func findUserInDataBase(email: String, password: String) -> User? {
         let dataBase = DataBase.shared.users
         
         print(dataBase)

@@ -7,9 +7,14 @@
 
 import UIKit
 
-class NewsPageCell: UITableViewCell {
-
+final class NewsPageCell: UITableViewCell {
+    
     static let identifier = "NewsPageCell"
+    
+    @IBOutlet weak var newsTitleLabel: UILabel!
+    @IBOutlet weak var newsImage: UIImageView!
+    @IBOutlet weak var timeOfUpload: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,5 +23,4 @@ class NewsPageCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
 }

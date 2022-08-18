@@ -9,11 +9,11 @@ import UIKit
 import SnapKit
 import Lottie
 
-class AnimationVC: UIViewController {
+final class AnimationVC: UIViewController {
 
-    var timer = Timer()
+    private var timer = Timer()
     
-    let viewAnimation: AnimationView = {
+    private let viewAnimation: AnimationView = {
         let viewAnimation = AnimationView(name: "news")
         viewAnimation.animationSpeed = 1.5
         viewAnimation.contentMode = .scaleAspectFit
@@ -36,7 +36,7 @@ class AnimationVC: UIViewController {
         })
     }
     
-    func animateView(_ viewAnimate: AnimationView) {
+    private func animateView(_ viewAnimate: AnimationView) {
         
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn) {
             viewAnimate.alpha = 0

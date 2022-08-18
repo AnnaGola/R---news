@@ -9,9 +9,13 @@ import UIKit
 import SnapKit
 import Lottie
 
-class HomePageVC: UIViewController {
+final class HomePageVC: UIViewController {
 
-    let viewAnimation: AnimationView = {
+//MARK: - Properties
+    private let clickLabel = UILabel()
+    private let bodyLabel = UILabel()
+    
+    private let viewAnimation: AnimationView = {
         let viewAnimation = AnimationView(name: "backView")
         viewAnimation.loopMode = .loop
         viewAnimation.alpha = 0.8
@@ -19,7 +23,7 @@ class HomePageVC: UIViewController {
         return viewAnimation
     }()
     
-    let welcomeAnimation: AnimationView = {
+    private let welcomeAnimation: AnimationView = {
         let welcomeAnimation = AnimationView(name: "hello")
         welcomeAnimation.loopMode = .autoReverse
         welcomeAnimation.alpha = 0.8
@@ -28,6 +32,7 @@ class HomePageVC: UIViewController {
         return welcomeAnimation
     }()
     
+//MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHomePage()
@@ -42,8 +47,7 @@ class HomePageVC: UIViewController {
     }
     
     private func setupHomePage() {
-        
-        let bodyLabel = UILabel()
+//MARK: - Setup label
         bodyLabel.text = "We have created this safe place just for you, where you can read news that are relaitable and relevant."
         bodyLabel.numberOfLines = 0
         bodyLabel.textAlignment = .left
@@ -55,7 +59,6 @@ class HomePageVC: UIViewController {
             make.left.right.equalToSuperview().inset(70)
         }
         
-        let clickLabel = UILabel()
         clickLabel.text = "One click apart from the safe news"
         clickLabel.font = UIFont(name: "Helvetica", size: 14)
         clickLabel.alpha = 0.7
@@ -66,6 +69,7 @@ class HomePageVC: UIViewController {
             make.right.left.equalToSuperview().inset(50)
         }
         
+//MARK: - Setup buttons
         let logInButton = UIButton(type: .system)
         logInButton.setTitle("Log In", for: .normal)
         logInButton.setTitleColor(.white, for: .normal)

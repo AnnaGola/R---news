@@ -9,24 +9,26 @@ import UIKit
 import SnapKit
 import Lottie
 
-class SignUpVC: UIViewController {
+final class SignUpVC: UIViewController {
 
 //MARK: - Properties
-    let signUpLabel = UILabel()
-    let nameValidationLabel = UILabel()
-    let nameTF = UITextField()
-    let ageValidationLabel = UILabel()
-    let ageTF = UITextField()
-    let emailValidationLabel = UILabel()
-    let passwordTF = UITextField()
-    let emailTF = UITextField()
-    let passwordValidationLabel = UILabel()
-    let validNickname: String.ValidTypes = .nickname
-    let validAge: String.ValidTypes = .age
-    let validEmail: String.ValidTypes = .email
-    let validPassword: String.ValidTypes = .password
+    private let signUpLabel = UILabel()
+    private let nameValidationLabel = UILabel()
+    private let nameTF = UITextField()
+    private let ageValidationLabel = UILabel()
+    private let ageTF = UITextField()
+    private let emailValidationLabel = UILabel()
+    private let passwordTF = UITextField()
+    private let emailTF = UITextField()
+    private let passwordValidationLabel = UILabel()
+    private let signUpButton = UIButton(type: .system)
     
-    let viewAnimation: AnimationView = {
+    private let validNickname: String.ValidTypes = .nickname
+    private let validAge: String.ValidTypes = .age
+    private let validEmail: String.ValidTypes = .email
+    private let validPassword: String.ValidTypes = .password
+    
+    private let viewAnimation: AnimationView = {
         let viewAnimation = AnimationView(name: "confetti")
         return viewAnimation
     }()
@@ -45,9 +47,8 @@ class SignUpVC: UIViewController {
         }
     }
     
-    
 //MARK: - Setups
-    func setTextFields(textField: UITextField,
+    private func setTextFields(textField: UITextField,
                        label: UILabel,
                        validType: String.ValidTypes,
                        validText: String,
@@ -75,14 +76,14 @@ class SignUpVC: UIViewController {
         }
     }
     
-    func setupDelegate() {
+    private func setupDelegate() {
         nameTF.delegate = self
         ageTF.delegate = self
         emailTF.delegate = self
         passwordTF.delegate = self
     }
     
-    func setupSignIn() {
+    private func setupSignIn() {
         signUpLabel.text = "Sign Up"
         signUpLabel.font = UIFont(name: "Helvetica", size: 22)
         signUpLabel.textAlignment = .left
@@ -209,7 +210,6 @@ class SignUpVC: UIViewController {
         
         
 //MARK: - Signup Button
-        let signUpButton = UIButton(type: .system)
         signUpButton.setTitle("Create account", for: .normal)
         signUpButton.setTitleColor(.white, for: .normal)
         signUpButton.titleLabel?.font = UIFont(name: "Helvetica", size: 19)
@@ -255,5 +255,61 @@ class SignUpVC: UIViewController {
             signUpLabel.text = "Sign Up"
             setAlert(title: "Not enough information", message: "Please make all requered fields light up green with your personal information!")
         }
+    }
+}
+
+//MARK: - Extensions
+extension SignUpVC: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        switch textField {
+        case nameTF:
+            setTextFields(textField: nameTF,
+                          label: nameValidationLabel,
+                          validType: validNickname,
+                          validText: "This nickname is available",
+                          wrongText: "Only a-z / A-Z, min 6 chars",
+                          string: string,
+                          range: range)
+            
+        case ageTF:
+            setTextFields(textField: ageTF,
+                          label: ageValidationLabel,
+                          validType: validAge,
+                          validText: "Allowed to continue",
+                          wrongText: "You shall not pass!",
+                          string: string,
+                          range: range)
+            
+        case emailTF:
+            setTextFields(textField: emailTF,
+                          label: emailValidationLabel,
+                          validType: validEmail,
+                          validText: "Valid email",
+                          wrongText: "Requered form is xxxxxxx@xxxx.xx",
+                          string: string,
+                          range: range)
+            
+        case passwordTF:
+            setTextFields(textField: passwordTF,
+                          label: passwordValidationLabel,
+                          validType: validPassword,
+                          validText: "Allowed to continue",
+                          wrongText: "Only a-z / A-Z, one digit and min 6 chars",
+                          string: string,
+                          range: range)
+        default:
+            break
+        }
+        return false
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameTF.resignFirstResponder()
+        ageTF.resignFirstResponder()
+        emailTF.resignFirstResponder()
+        passwordTF.resignFirstResponder()
+        return true
     }
 }

@@ -1,5 +1,5 @@
 //
-//  Manager.swift
+//  UserDefaults.swift
 //  R - news
 //
 //  Created by anna on 14.08.2022.

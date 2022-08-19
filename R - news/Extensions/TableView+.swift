@@ -9,7 +9,7 @@ import UIKit
 
 extension UITableView {
     
-    func animateTableView() {
+    func animate() {
         self.reloadData()
         
         let cells = self.visibleCells
@@ -28,7 +28,6 @@ extension UITableView {
                 options: .curveEaseInOut) {
                     cell.transform = CGAffineTransform.identity
                 }
-            
             delayOfAnimation += 1
         }
     }

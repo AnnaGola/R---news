@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A16E9298A455FC46168CE23 /* Pods_R___news.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0509E8CBEE83740602CF2F8 /* Pods_R___news.framework */; };
+		AF7C972D28B021CD000729C9 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7C972C28B021CD000729C9 /* View+.swift */; };
 		AF892CB9289AD48E00E79D4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF892CB8289AD48E00E79D4A /* AppDelegate.swift */; };
 		AF892CBB289AD48E00E79D4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF892CBA289AD48E00E79D4A /* SceneDelegate.swift */; };
 		AF892CBD289AD48E00E79D4A /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF892CBC289AD48E00E79D4A /* HomePageVC.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		4535FB157DCF704A201AB2AA /* Pods-R - news.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R - news.debug.xcconfig"; path = "Target Support Files/Pods-R - news/Pods-R - news.debug.xcconfig"; sourceTree = "<group>"; };
 		6692AAAADC831CBD441BD6B0 /* Pods-R - news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R - news.release.xcconfig"; path = "Target Support Files/Pods-R - news/Pods-R - news.release.xcconfig"; sourceTree = "<group>"; };
+		AF7C972C28B021CD000729C9 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		AF892CB5289AD48E00E79D4A /* R - news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "R - news.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF892CB8289AD48E00E79D4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF892CBA289AD48E00E79D4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				AFE83DA228A8E7C300DB1130 /* String+.swift */,
 				AFE9D51D28A913C50065BA37 /* Alert+.swift */,
+				AF7C972C28B021CD000729C9 /* View+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				AF99B974289FF6A1008CE3A7 /* LogInVC.swift in Sources */,
 				AF892CB9289AD48E00E79D4A /* AppDelegate.swift in Sources */,
 				AFE83DA828A9073D00DB1130 /* Manager.swift in Sources */,
+				AF7C972D28B021CD000729C9 /* View+.swift in Sources */,
 				AFE9D52728A986060065BA37 /* NewsPageCell.swift in Sources */,
 				AFE83DAB28A907F600DB1130 /* UserModel.swift in Sources */,
 				AF892CBB289AD48E00E79D4A /* SceneDelegate.swift in Sources */,

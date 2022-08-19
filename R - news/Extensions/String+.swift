@@ -39,4 +39,10 @@ extension String {
         }
         return NSPredicate(format: format, regEx).evaluate(with: self)
     }
+    
+    func stringToDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        return dateFormatter.date(from: self)
+    }
 }

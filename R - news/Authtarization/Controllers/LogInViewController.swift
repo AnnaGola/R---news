@@ -1,5 +1,5 @@
 //
-//  LogInVC.swift
+//  LogInViewController.swift
 //  R - news
 //
 //  Created by anna on 07.08.2022.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class LogInVC: UIViewController {
+final class LogInViewController: UIViewController {
     
 //MARK: - Properties
     private let logInLabel = UILabel()

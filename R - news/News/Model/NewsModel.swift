@@ -1,5 +1,5 @@
 //
-//  News.swift
+//  NewsModel.swift
 //  R - news
 //
 //  Created by anna on 19.08.2022.

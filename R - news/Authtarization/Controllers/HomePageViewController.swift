@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomePageViewController.swift
 //  R - news
 //
 //  Created by anna on 03.08.2022.
@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Lottie
 
-final class HomePageVC: UIViewController {
+final class HomePageViewController: UIViewController {
 
 //MARK: - Properties
     private let clickLabel = UILabel()
@@ -111,12 +111,12 @@ final class HomePageVC: UIViewController {
   }
     
     @objc private func logInTapped() {
-        let vc = LogInVC()
+        let vc = LogInViewController()
         present(vc, animated: true)
     }
     
     @objc private func signInTapped() {
-        let vc = SignUpVC()
+        let vc = SignUpViewController()
         present(vc, animated: true)
     }
 }

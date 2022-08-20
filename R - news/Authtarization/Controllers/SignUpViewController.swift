@@ -1,5 +1,5 @@
 //
-//  SignUpVC.swift
+//  SignUpViewController.swift
 //  R - news
 //
 //  Created by anna on 07.08.2022.
@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Lottie
 
-final class SignUpVC: UIViewController {
+final class SignUpViewController: UIViewController {
 
 //MARK: - Properties
     private let signUpLabel = UILabel()
@@ -258,7 +258,7 @@ final class SignUpVC: UIViewController {
 }
 
 //MARK: - Extensions
-extension SignUpVC: UITextFieldDelegate {
+extension SignUpViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         

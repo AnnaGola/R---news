@@ -8,7 +8,7 @@
 import Foundation
 
 //MARK: - ViewModel Protocol
-protocol NewsViewModelprotocol: AnyObject {
+protocol NewsViewModelProtocol: AnyObject {
     var news: Bindable<[News]> { get set }
     var error: Bindable<NetworkError?> { get set }
     var title: Bindable<String> { get set }
@@ -28,7 +28,7 @@ protocol NewsViewModelprotocol: AnyObject {
 }
 
 
-final class NewsViewModel: NewsViewModelprotocol {
+final class NewsViewModel: NewsViewModelProtocol {
     
 //MARK: - Properties
     let network: NetworkServiceProtocol

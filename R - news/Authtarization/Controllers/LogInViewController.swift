@@ -122,6 +122,12 @@ final class LogInViewController: UIViewController {
         if user == nil {
             logInLabel.text = "User not found"
             logInLabel.textColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
+        } else if user?.email == email && user?.password == password {
+            let assembly = Assembly()
+            let newsVC = assembly.configureNewsModule()
+            let navigationController = UINavigationController(rootViewController: newsVC)
+            navigationController.modalPresentationStyle = .fullScreen
+            self.present(navigationController, animated: true)
         }
     }
     

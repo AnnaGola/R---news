@@ -35,7 +35,7 @@ final class NetworkService: NetworkServiceProtocol {
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             
-            guard let error = error, let data = data else { return }
+            guard let data = data else { return }
 
             let decoder = JSONDecoder()
             do {

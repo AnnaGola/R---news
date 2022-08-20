@@ -43,5 +43,15 @@ enum Constants {
         (abbreviation: "se", country: "Sweden"),
         (abbreviation: "us", country: "United States")
     ]
+    
+    static let topics = [
+        "Business",
+        "Entertainment",
+        "General",
+        "Health",
+        "Science",
+        "Sports",
+        "Technology"
+    ]
 }
 

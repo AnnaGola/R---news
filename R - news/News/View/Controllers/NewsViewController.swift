@@ -63,7 +63,7 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
     private func setupViewController() {
         view.backgroundColor = #colorLiteral(red: 0.9724035859, green: 0.9314741492, blue: 0.9023552537, alpha: 1)
         navigationController?.navigationItem.title = "News"
-        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.5670369267, green: 0.8727459311, blue: 0.6660459638, alpha: 1)
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.2550722063, green: 0.3968343735, blue: 0.3025023043, alpha: 1)
         navigationItem.backButtonTitle = ""
         activityIndicator.startAnimating()
     }

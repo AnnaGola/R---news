@@ -13,12 +13,13 @@ protocol PickerViewControllerDelegate: AnyObject {
 }
 
 final class PickerViewController: UIViewController {
-    
+
+//MARK: - Properties
     weak var delegate: PickerViewControllerDelegate?
-    lazy var constants = Constants.allCountries
+    private lazy var constants = Constants.allCountries
     private lazy var countryPikerView = UIPickerView()
     
-    
+//MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewCcontroller()

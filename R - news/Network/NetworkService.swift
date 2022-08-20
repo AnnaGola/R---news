@@ -84,7 +84,7 @@ final class NetworkService: NetworkServiceProtocol {
             do {
                 let topicByCountry = try! decoder.decode(NewsResponse.self, from: data)
                 completion(Result.success(topicByCountry))
-            } catch {
+            } catch let jsonDecoder {
                 completion(Result.failure(.failedToGetData))
             }
         }

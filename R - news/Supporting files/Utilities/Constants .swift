@@ -12,15 +12,15 @@ enum Constants {
     static let baseUrl = "https://newsapi.org/v2/"
     static let topHeadlines = "top-headlines?"
     static let everything = "everything?"
-    static let apiKey = "apiKey=f2988f18c66b42b49b1f70b62b688c57"
+    static let apiKey = "apiKey=d8c42891254741528e8cd5acdb6ec5c9"
     
     static let country = "country="
     static let category = "category="
     static let query = "q="
     static let ampersand = "&"
     
-    static let heightForHeader: CGFloat = 350
-    static let heightForCell: CGFloat = 120
+    static let heightForHeader: CGFloat = 320
+    static let heightForCell: CGFloat = 110
     static let heightForHeaderInSection: CGFloat = 50
     static let padding: CGFloat = 16
     
@@ -45,13 +45,13 @@ enum Constants {
     ]
     
     static let topics = [
-        "Business",
-        "Entertainment",
-        "General",
-        "Health",
-        "Science",
-        "Sports",
-        "Technology"
+        " Business",
+        " Entertainment",
+        " General",
+        " Health",
+        " Science",
+        " Sports",
+        " Technology"
     ]
 }
 

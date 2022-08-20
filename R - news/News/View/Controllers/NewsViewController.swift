@@ -83,9 +83,114 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
         navigationItem.searchController = searchController
     }
     
+    private func setupRefreshControl() {
+        newsTableView.refreshControl = refreshControl
+        refreshControl.addTarget(
+            self,
+            action: #selector(refreshNewsData),
+            for: .valueChanged
+        )
+    }
     
+    private func setupBarButtons() {
+        let searchButton = UIBarButtonItem(
+            image: UIImage(systemName: "magnifyingglass"),
+            style: .done,
+            target: self,
+            action: #selector(didTapSearchButton)
+        )
+        
+        let countryButton = UIBarButtonItem(
+            image: UIImage(systemName: "globe.europe.africa"),
+            style: .done,
+            target: self,
+            action: #selector(didTapCountryButton)
+        )
+        
+        let topicButton = UIBarButtonItem(
+            image: UIImage(systemName: "list.dash"),
+            style: .done,
+            target: self,
+            action: #selector(didTapTopicButton)
+        )
+        
+        navigationItem.leftBarButtonItem = searchButton
+        navigationItem.rightBarButtonItems = [countryButton, topicButton]
+    }
     
+    private func setupNewsTableView() {
+        newsTableView.dataSource = self
+        newsTableView.delegate = self
+        newsTableView.register(
+            HeaderNewsTableViewCell.self,
+            forCellReuseIdentifier: HeaderNewsTableViewCell.identifier)
+        newsTableView.register(
+            BaseHeaderCell.self,
+            forCellReuseIdentifier: BaseHeaderCell.identifier)
+        newsTableView.register(
+            NewsTableViewCell.self,
+            forCellReuseIdentifier: NewsTableViewCell.identifier)
+        newsTableView.register(
+            BaseCell.self,
+            forCellReuseIdentifier: BaseCell.identifier)
+    }
     
+//MARK: - Actions
+    
+    @objc private func didTapSearchButton() {
+        searchController.isActive = true
+        searchController.searchBar.becomeFirstResponder()
+    }
+    
+    @objc private func didTapCountryButton() {
+        let countryPickerVC = CountryPickerViewController()
+        countryPickerVC.delegate = self
+        navigationController?.pushViewController(countryPickerVC, animated: true)
+    }
+    
+    @objc private func didTapTopicButton() {
+        let topicVC = TopicViewController()
+        topicVC.delegate = self
+        navigationController?.pushViewController(topicVC, animated: true)
+    }
+    
+    @objc private func refreshNewsData() {
+        isLoaded = !isLoaded
+        newsTableView.reloadData()
+        viewModel.getTopNews(country: viewModel.country)
+        isSearching = false
+    }
+    
+//MARK: - Biding
+    
+    private func setupBidings() {
+        viewModel.title.bind { [weak self] title in
+            DispatchQueue.main.async {
+                self?.title = title
+            }
+        }
+        
+        viewModel.isLoading.bind { [weak self] isLoaded in
+            DispatchQueue.main.async {
+                if !isLoaded {
+                    self?.activityIndicator.stopAnimating()
+                } else {
+                    self?.isLoaded = false
+                    self?.newsTableView.reloadData()
+                }
+            }
+        }
+        
+        viewModel.error.bind { [weak self] error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    let title = "Error Code : \(error.localizedDescription)"
+                    let message = "Something went wronge, please check your network and try againg"
+                    self?.setAlert(title: title, message: message)
+                }
+            }
+        }
+    }
 }
 
 //MARK: - Extensions

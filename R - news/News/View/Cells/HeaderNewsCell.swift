@@ -82,7 +82,6 @@ final class HeaderNewsTableViewCell: UITableViewCell {
             publisherLabel.textColor = .secondaryLabel
             publisherLabel.textAlignment = .left
             publisherLabel.font = .systemFont(ofSize: 14, weight: .regular)
-            
         }
 
 //MARK: - Configuration

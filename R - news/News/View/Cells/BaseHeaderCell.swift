@@ -11,49 +11,20 @@ import Kingfisher
 
 final class BaseHeaderCell: UITableViewCell, Loadable {
     
+//MARK: - Identifier
     static let identifier = "BaseHeaderCell"
     
+//MARK: - Properties
     private var iconImageLayer = CAGradientLayer()
     private var titleLayer = CAGradientLayer()
     private var dateLayer = CAGradientLayer()
     private var publisherLayer = CAGradientLayer()
+    private let iconImageView = UIImageView()
+    private let titleLabel = UILabel()
+    private let dateLabel = UILabel()
+    private let publisherLabel = UILabel()
     
-    private let iconImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = .secondarySystemBackground
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 10
-        imageView.clipsToBounds = true
-        return imageView
-    }()
-    
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 2
-        label.textColor = .label
-        label.textAlignment = .left
-        label.font = .systemFont(ofSize: 18, weight: .medium)
-        return label
-    }()
-    
-    private let dateLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 1
-        label.textColor = .secondaryLabel
-        label.textAlignment = .left
-        label.font = .systemFont(ofSize: 14, weight: .regular)
-        return label
-    }()
-    
-    private let publisherLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 1
-        label.textColor = .secondaryLabel
-        label.textAlignment = .left
-        label.font = .systemFont(ofSize: 14, weight: .regular)
-        return label
-    }()
-    
+//MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
@@ -64,21 +35,7 @@ final class BaseHeaderCell: UITableViewCell, Loadable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        iconImageLayer.frame = iconImageView.bounds
-        iconImageLayer.cornerRadius = 5
-        
-        titleLayer.frame = titleLabel.bounds
-        titleLayer.cornerRadius = 3
-        
-        dateLayer.frame = dateLabel.bounds
-        dateLayer.cornerRadius = 3
-        
-        publisherLayer.frame = publisherLabel.bounds
-        publisherLayer.cornerRadius = 3
-    }
-    
+//MARK: - Setup
     private func setup() {
         iconImageLayer.startPoint = CGPoint(x: 0, y: 0)
         iconImageLayer.endPoint = CGPoint(x: 1, y: 1)
@@ -96,6 +53,26 @@ final class BaseHeaderCell: UITableViewCell, Loadable {
         publisherLayer.endPoint = CGPoint(x: 1, y: 0.5)
         publisherLabel.layer.addSublayer(publisherLayer)
         
+        iconImageView.backgroundColor = .secondarySystemBackground
+        iconImageView.contentMode = .scaleAspectFill
+        iconImageView.layer.cornerRadius = 10
+        iconImageView.clipsToBounds = true
+        
+        titleLabel.numberOfLines = 2
+        titleLabel.textColor = .label
+        titleLabel.textAlignment = .left
+        titleLabel.font = .systemFont(ofSize: 18, weight: .medium)
+        
+        dateLabel.numberOfLines = 1
+        dateLabel.textColor = .secondaryLabel
+        dateLabel.textAlignment = .left
+        dateLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        
+        publisherLabel.numberOfLines = 1
+        publisherLabel.textColor = .secondaryLabel
+        publisherLabel.textAlignment = .left
+        publisherLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        
         let imageGroup = makeAnimationGroup()
         imageGroup.beginTime = 0.0
         iconImageLayer.add(imageGroup, forKey: "backgroundColor")
@@ -110,6 +87,7 @@ final class BaseHeaderCell: UITableViewCell, Loadable {
         publisherLayer.add(publisherGroup, forKey: "backgroundColor")
     }
     
+//MARK: - Layout
     private func layout() {
         contentView.addSubview(iconImageView)
         contentView.addSubview(titleLabel)
@@ -140,6 +118,22 @@ final class BaseHeaderCell: UITableViewCell, Loadable {
         }
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        iconImageLayer.frame = iconImageView.bounds
+        iconImageLayer.cornerRadius = 5
+        
+        titleLayer.frame = titleLabel.bounds
+        titleLayer.cornerRadius = 3
+        
+        dateLayer.frame = dateLabel.bounds
+        dateLayer.cornerRadius = 3
+        
+        publisherLayer.frame = publisherLabel.bounds
+        publisherLayer.cornerRadius = 3
+    }
+
+//MARK: - Configuration
     func configure(with model: News) {
         guard let url = URL(string: model.urlToImage ?? "") else { return }
         

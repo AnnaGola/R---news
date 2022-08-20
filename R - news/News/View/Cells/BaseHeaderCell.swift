@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-final class SkeletonHeaderCell: UITableViewCell, Loadable {
+final class BaseHeaderCell: UITableViewCell, Loadable {
     
-    static let identifier = "SkeletonHeaderCell"
+    static let identifier = "BaseHeaderCell"
     
     private var iconImageLayer = CAGradientLayer()
     private var titleLayer = CAGradientLayer()
@@ -152,7 +152,7 @@ final class SkeletonHeaderCell: UITableViewCell, Loadable {
                 .cacheOriginalImage
             ])
         
-        dateLabel.text = model.publishedAt.toDate()?.timeAgoDisplay()
+        dateLabel.text = model.publishedAt.stringToDate()?.timeAgoDisplay()
         titleLabel.text = model.title
         publisherLabel.text = model.source.name
     }

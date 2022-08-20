@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol ApiCallProtocol {
+protocol APIProtocol {
     func setupTopNewsUrl(country: String) -> String
     func setupNewsUrl(query: String) -> String
     func setupSpecificNewsUrl(topic: String, country: String) -> String
 }
 
-struct ApiCall: ApiCallProtocol {
+struct API: APIProtocol {
     
     func setupTopNewsUrl(country: String) -> String {
         return Constants.baseUrl + Constants.topHeadlines + Constants.apiKey + Constants.ampersand + Constants.country + country

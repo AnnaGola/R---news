@@ -22,7 +22,7 @@ extension UITableView {
             
             UIView.animate(
                 withDuration: 1,
-                delay: delay * 0.1,
+                delay: delayOfAnimation * 0.1,
                 usingSpringWithDamping: 0.8,
                 initialSpringVelocity: 0,
                 options: .curveEaseInOut) {

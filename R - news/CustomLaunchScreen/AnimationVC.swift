@@ -10,20 +10,17 @@ import SnapKit
 import Lottie
 
 final class AnimationVC: UIViewController {
-
-    private var timer = Timer()
     
-    private let viewAnimation: AnimationView = {
-        let viewAnimation = AnimationView(name: "news")
+//MARK: - Properties
+    private var timer = Timer()
+    private let viewAnimation = AnimationView(name: "news")
+    
+//MARK: - Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
         viewAnimation.animationSpeed = 1.5
         viewAnimation.contentMode = .scaleAspectFit
         viewAnimation.play()
-        return viewAnimation
-    }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
         view.backgroundColor = #colorLiteral(red: 0.9724035859, green: 0.9314741492, blue: 0.9023552537, alpha: 1)
         view.addSubview(viewAnimation)
         viewAnimation.snp.makeConstraints { make in

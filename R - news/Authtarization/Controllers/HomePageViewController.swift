@@ -14,23 +14,10 @@ final class HomePageViewController: UIViewController {
 //MARK: - Properties
     private let clickLabel = UILabel()
     private let bodyLabel = UILabel()
-    
-    private let viewAnimation: AnimationView = {
-        let viewAnimation = AnimationView(name: "backView")
-        viewAnimation.loopMode = .loop
-        viewAnimation.alpha = 0.8
-        viewAnimation.play()
-        return viewAnimation
-    }()
-    
-    private let welcomeAnimation: AnimationView = {
-        let welcomeAnimation = AnimationView(name: "hello")
-        welcomeAnimation.loopMode = .autoReverse
-        welcomeAnimation.alpha = 0.8
-        welcomeAnimation.animationSpeed = 0.7
-        welcomeAnimation.play()
-        return welcomeAnimation
-    }()
+    private let logInButton = UIButton(type: .system)
+    private let signUpButton = UIButton(type: .system)
+    private let viewAnimation = AnimationView(name: "backView")
+    private let welcomeAnimation = AnimationView(name: "hello")
     
 //MARK: - Methods
     override func viewDidLoad() {
@@ -47,6 +34,16 @@ final class HomePageViewController: UIViewController {
     }
     
     private func setupHomePage() {
+//MARK: - Setup animations
+        welcomeAnimation.loopMode = .autoReverse
+        welcomeAnimation.alpha = 0.8
+        welcomeAnimation.animationSpeed = 0.7
+        welcomeAnimation.play()
+        
+        viewAnimation.loopMode = .loop
+        viewAnimation.alpha = 0.8
+        viewAnimation.play()
+        
 //MARK: - Setup label
         bodyLabel.text = "We have created this safe place just for you, where you can read news that are relatable and relevant."
         bodyLabel.numberOfLines = 0
@@ -70,7 +67,6 @@ final class HomePageViewController: UIViewController {
         }
         
 //MARK: - Setup buttons
-        let logInButton = UIButton(type: .system)
         logInButton.setTitle("Log In", for: .normal)
         logInButton.setTitleColor(.white, for: .normal)
         logInButton.titleLabel?.font = UIFont(name: "Helvetica", size: 19)
@@ -89,7 +85,6 @@ final class HomePageViewController: UIViewController {
             make.height.equalTo(40)
         }
         
-        let signUpButton = UIButton(type: .system)
         signUpButton.setTitle("Sign Up", for: .normal)
         signUpButton.setTitleColor(.white, for: .normal)
         signUpButton.titleLabel?.font = UIFont(name: "Helvetica", size: 19)

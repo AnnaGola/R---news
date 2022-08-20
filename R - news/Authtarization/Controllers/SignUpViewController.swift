@@ -28,10 +28,7 @@ final class SignUpViewController: UIViewController {
     private let validEmail: String.ValidTypes = .email
     private let validPassword: String.ValidTypes = .password
     
-    private let viewAnimation: AnimationView = {
-        let viewAnimation = AnimationView(name: "confetti")
-        return viewAnimation
-    }()
+    private let viewAnimation = AnimationView(name: "confetti")
     
     
 //MARK: - ViewDidLoad

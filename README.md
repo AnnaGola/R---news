@@ -5,11 +5,12 @@
 * MVVM + binding
 * SnapKit для верстки 
 * Lottie для анимаций 
+* Kingfisher для изображений
 * UserDefaults для хранения данных
 
 ## Launch Screen и Архитектура проекта
 
-<img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/launch.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/Снимок%20экрана%202022-08-18%20в%2014.00.09.png" width="166"> 
+<img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/launch.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/Снимок%20экрана%202022-08-20%20в%2019.22.00.png" width="172">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/Снимок%20экрана%202022-08-20%20в%2019.22.34.png" width="185"> 
 
 ## Home Page
 
@@ -19,7 +20,7 @@
 
 
 ## SignUp Page
-Здксь все поля должны пройти валидацию, расписанную через регулярные выражения. При отоброжении всех надписей в зеленом цвете возможно совершить регистрацию, если хотя бы одно поле не заполнено - появится алерт с предупреждением.
+Здесь все поля должны пройти валидацию, расписанную через регулярные выражения. При отоброжении всех надписей в зеленом цвете возможно совершить регистрацию, если хотя бы одно поле не заполнено - появится алерт с предупреждением.
 
 <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/signup.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/confetti.gif" width="160"> 
 

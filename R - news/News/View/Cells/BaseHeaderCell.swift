@@ -10,10 +10,10 @@ import SnapKit
 import Kingfisher
 
 final class BaseHeaderCell: UITableViewCell, Loadable {
-    
+
 //MARK: - Identifier
     static let identifier = "BaseHeaderCell"
-    
+
 //MARK: - Properties
     private var iconImageLayer = CAGradientLayer()
     private var titleLayer = CAGradientLayer()
@@ -23,7 +23,7 @@ final class BaseHeaderCell: UITableViewCell, Loadable {
     private let titleLabel = UILabel()
     private let dateLabel = UILabel()
     private let publisherLabel = UILabel()
-    
+
 //MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -72,7 +72,7 @@ final class BaseHeaderCell: UITableViewCell, Loadable {
         publisherLabel.textColor = .secondaryLabel
         publisherLabel.textAlignment = .left
         publisherLabel.font = .systemFont(ofSize: 14, weight: .regular)
-        
+
         let imageGroup = makeAnimationGroup()
         imageGroup.beginTime = 0.0
         iconImageLayer.add(imageGroup, forKey: "backgroundColor")

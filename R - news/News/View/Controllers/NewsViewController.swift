@@ -104,14 +104,56 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        switch sections[indexPath.section] {
-//        case .header:
-//            if isLoaded {
-//                guard let cell = tableView.dequeueReusableCell(withIdentifier: <#T##String#>, for: <#T##IndexPath#>)
-//            }
-//        }
-//    }
-//
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch sections[indexPath.section] {
+        case .header:
+            if isLoaded {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: HeaderNewsTableViewCell.identifier, for: indexPath) as? HeaderNewsTableViewCell else { return UITableViewCell() }
+                if let firstNews = viewModel.news.value.first {
+                    cell.configure(with: firstNews)
+                }
+                return cell
+                
+            } else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: BaseHeaderCell.identifier, for: indexPath) as? BaseHeaderCell else { return UITableViewCell() }
+                if let firstNews = viewModel.news.value.first {
+                    cell.configure(with: firstNews)
+                }
+                return cell
+            }
+            
+        case .list:
+            let news = viewModel.news.value[indexPath.row + 1]
+            
+            if isLoaded {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.identifier, for: indexPath) as? NewsTableViewCell else { return UITableViewCell() }
+                cell.configure(with: news)
+                return cell
+                
+            } else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: BaseCell.identifier, for: indexPath) as? BaseCell else { return UITableViewCell() }
+                cell.configure(with: news)
+                return cell
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        var news = viewModel.news.value[indexPath.row]
+        
+        switch indexPath.section {
+        case 0:
+            news = viewModel.news.value[indexPath.row]
+        case 1:
+            news = viewModel.news.value[indexPath.row + 1]
+        default:
+            break
+        }
+        
+        let vc = SelectedNewsViewController(news: news)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
 }

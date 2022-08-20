@@ -5,6 +5,7 @@
 * MVVM + binding
 * SnapKit для верстки 
 * Lottie для анимаций 
+* Kingfisher для изображений
 * UserDefaults для хранения данных
 
 ## Launch Screen и Архитектура проекта

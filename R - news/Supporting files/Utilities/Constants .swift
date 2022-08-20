@@ -23,5 +23,25 @@ enum Constants {
     static let heightForCell: CGFloat = 120
     static let heightForHeaderInSection: CGFloat = 50
     static let padding: CGFloat = 16
+    
+    static let allCountries = [
+        (abbreviation: "ru", country: "Russia"),
+        (abbreviation: "ar", country: "Argentina"),
+        (abbreviation: "au", country: "Australia"),
+        (abbreviation: "br", country: "Brazil"),
+        (abbreviation: "ca", country: "Canada"),
+        (abbreviation: "cn", country: "China"),
+        (abbreviation: "fr", country: "France"),
+        (abbreviation: "de", country: "Germany"),
+        (abbreviation: "gb", country: "Great Britain"),
+        (abbreviation: "it", country: "Italy"),
+        (abbreviation: "in", country: "India"),
+        (abbreviation: "jp", country: "Japan"),
+        (abbreviation: "kr", country: "Korea"),
+        (abbreviation: "mx", country: "Mexico"),
+        (abbreviation: "no", country: "Norway"),
+        (abbreviation: "se", country: "Sweden"),
+        (abbreviation: "us", country: "United States")
+    ]
 }
 

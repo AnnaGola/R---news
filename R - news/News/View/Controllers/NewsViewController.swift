@@ -20,10 +20,9 @@ enum CellType {
 }
 
 final class NewsViewController: UIViewController, NewsViewControllerProtocol {
-
+    
 //MARK: - Properties
     var viewModel: NewsViewModelProtocol
-    
     private let sections = [CellType.header, CellType.list]
     private let searchController = UISearchController(searchResultsController: nil)
     private let refreshControl = UIRefreshControl()
@@ -51,6 +50,13 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
 //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViewController()
+        setupLayout()
+        setupNewsTableView()
+        setupSearchBar()
+        setupRefreshControl()
+        setupBarButtons()
+        setupBidings()
     }
     
 //MARK: - Setups
@@ -78,7 +84,6 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
     private func setupSearchBar() {
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
-        
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
     }
@@ -143,9 +148,9 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
     }
     
     @objc private func didTapCountryButton() {
-        let countryPickerVC = CountryPickerViewController()
-        countryPickerVC.delegate = self
-        navigationController?.pushViewController(countryPickerVC, animated: true)
+        let pickerVC = PickerViewController()
+        pickerVC.delegate = self
+        navigationController?.pushViewController(pickerVC, animated: true)
     }
     
     @objc private func didTapTopicButton() {
@@ -162,7 +167,6 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
     }
     
 //MARK: - Biding
-    
     private func setupBidings() {
         viewModel.title.bind { [weak self] title in
             DispatchQueue.main.async {
@@ -194,7 +198,7 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
 }
 
 //MARK: - Extensions
-extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
+extension NewsViewController: UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
@@ -260,5 +264,76 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch sections[indexPath.section] {
+        case .header:
+            return Constants.heightForHeader
+        case .list:
+            return Constants.heightForCell
+        }
+    }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return Constants.heightForHeaderInSection
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let section = sections[section]
+        let headerView = UIView()
+        let headerLabel = UILabel(frame: CGRect(
+            x: Constants.padding,
+            y: 0.0,
+            width: view.width - Constants.padding,
+            height: Constants.heightForHeaderInSection))
+        headerLabel.font = .systemFont(ofSize: 25, weight: .bold)
+        headerView.addSubview(headerLabel)
+        
+        switch section {
+        case .header:
+            headerLabel.text = "Trending Now"
+            return headerView
+        case .list:
+            headerLabel.text = "Top News"
+            return headerView
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        switch sections[indexPath.section] {
+        case .header:
+            return
+        case .list:
+            if indexPath.row == viewModel.news.value.count - 2 && viewModel.news.value.count < viewModel.totalData {
+                if isSearching {
+                    viewModel.searchNews(query: viewModel.searchText)
+                } else {
+                    viewModel.getTopNews(country: viewModel.country)
+                }
+            }
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        activityIndicator.startAnimating()
+        viewModel.searchText = searchText
+        
+        if searchText == "" {
+            isSearching = false
+            viewModel.getTopNews(country: viewModel.country)
+        } else {
+            isSearching = true
+            viewModel.searchNews(query: searchText)
+        }
+    }
+}
+
+extension NewsViewController: PickerViewControllerDelegate, TopicViewControllerDelegate {
+    
+    func setCountry(with country: String) {
+        viewModel.country = country
+    }
+    
+    func setTopic(with topic: String) {
+        viewModel.topic = topic
+    }
 }

@@ -40,6 +40,6 @@
 
 <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/picker.gif" width="160"> 
 
-* Более узкий поиск по категориям 
+* Более узкий поиск по категориям, с кастомной анимацией 
 
-<img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/newsscreen.gif" width="160"> 
+<img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/detail.gif" width="160"> 

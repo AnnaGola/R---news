@@ -26,13 +26,13 @@
 
 ## LogIn Page
 
-Поссле успешной регистрации можно сразу выполнить вход в аккаунт.
+После успешной регистрации можно сразу выполнить вход в аккаунт.
 
 <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/login.gif" width="160"> 
 
 ## News 
 
-* Основной экран с новостями, первый запуск
+* Основной экран с новостями, по клику на любую из новостей откроется детальный экран с более подробной информацией об этой новости, по клику на кнопку "Read more" откроется еще один экран WebKit, с сайтом, откуда была взята конкретная новость
 
 <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/placeholder.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/newsscreen.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/detailscreen.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/webkit.gif" width="160"> 
 

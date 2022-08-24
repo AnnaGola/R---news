@@ -32,18 +32,16 @@ final class NetworkService: NetworkServiceProtocol {
         
         let urlString = apiCall.setupTopNewsUrl(country: country)
         guard let url = URL(string: urlString) else { return }
-        
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            
-            guard let data = data else { return }
 
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { return }
+            
             let decoder = JSONDecoder()
             do {
-                let topNews = try decoder.decode(NewsResponse.self, from: data)
-                completion(Result.success(topNews))
-            } catch let jsonError {
-                print(jsonError.localizedDescription)
-                completion(Result.failure(.failtToDeccodeData))
+                let county = try decoder.decode(NewsResponse.self, from: data)
+                completion(Result.success(county))
+            } catch {
+                completion(Result.failure(.failedToGetData))
             }
         }
         task.resume()
@@ -62,8 +60,7 @@ final class NetworkService: NetworkServiceProtocol {
             do {
                 let query = try decoder.decode(NewsResponse.self, from: data)
                 completion(Result.success(query))
-            } catch let jsonError {
-                print(jsonError.localizedDescription)
+            } catch {
                 completion(Result.failure(.failedToGetData))
             }
         }
@@ -84,7 +81,7 @@ final class NetworkService: NetworkServiceProtocol {
             do {
                 let topicByCountry = try! decoder.decode(NewsResponse.self, from: data)
                 completion(Result.success(topicByCountry))
-            } catch let jsonDecoder {
+            } catch {
                 completion(Result.failure(.failedToGetData))
             }
         }

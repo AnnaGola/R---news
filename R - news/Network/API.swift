@@ -14,7 +14,7 @@ protocol APIProtocol {
 }
 
 struct API: APIProtocol {
-    
+
     func setupTopNewsUrl(country: String) -> String {
         return Constants.baseUrl + Constants.topHeadlines + Constants.apiKey + Constants.ampersand + Constants.country + country
     }

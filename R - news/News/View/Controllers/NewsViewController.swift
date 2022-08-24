@@ -161,9 +161,11 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
     
     @objc private func refreshNewsData() {
         isLoaded = !isLoaded
-        newsTableView.reloadData()
         viewModel.getTopNews(country: viewModel.country)
         isSearching = false
+        DispatchQueue.main.async {
+            self.newsTableView.reloadData()
+        }
     }
     
 //MARK: - Biding

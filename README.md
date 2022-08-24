@@ -36,7 +36,7 @@
 
 <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/placeholder.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/newsscreen.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/detailscreen.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/webkit.gif" width="160"> 
 
-* Смена страны в пикере
+* Смена страны в пикере позволит смотреть актуальные новости в этой стране, на языке этой страны!
 
 <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/picker.gif" width="160"> 
 

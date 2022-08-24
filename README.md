@@ -19,10 +19,27 @@
 <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/all.gif" width="160"> 
 
 ## SignUp Page
+
 Здесь все поля должны пройти валидацию, расписанную через регулярные выражения. При отоброжении всех надписей в зеленом цвете возможно совершить регистрацию, если хотя бы одно поле не заполнено - появится алерт с предупреждением.
 
 <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/signup.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/confetti.gif" width="160"> 
 
 ## LogIn Page
 
+Поссле успешной регистрации можно сразу выполнить вход в аккаунт.
+
 <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/login.gif" width="160"> 
+
+## News 
+
+* Основной экран с новостями, первый запуск
+
+<img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/placeholder.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/newsscreen.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/detailscreen.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/webkit.gif" width="160"> 
+
+* Смена страны в пикере
+
+<img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/picker.gif" width="160"> 
+
+* Более узкий поиск по категориям с кастомной анимацией, прописанной через расширение UITableView
+
+<img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/detail.gif" width="160"> 

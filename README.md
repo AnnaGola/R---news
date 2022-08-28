@@ -3,10 +3,10 @@
 
 В этом проекте я использовала:
 * MVVM + binding
-* SnapKit для верстки 
-* Lottie для анимаций 
-* Kingfisher для изображений
-* UserDefaults для хранения данных
+* SnapKit
+* Lottie 
+* Kingfisher
+* UserDefaults
 * Регулярные выражения для валидации
 
 ## Launch Screen и Архитектура проекта

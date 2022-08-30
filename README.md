@@ -4,7 +4,7 @@
 В этом проекте я использовала:
 * MVVM + binding
 * SnapKit
-* Lottie 
+* Lottie
 * Kingfisher
 * UserDefaults
 * Регулярные выражения для валидации
@@ -31,7 +31,7 @@
 
 <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/login.gif" width="160"> 
 
-## News 
+## News
 
 * Основной экран с новостями, по клику на любую из новостей откроется детальный экран с более подробной информацией об этой новости, по клику на кнопку "Read more" откроется еще один экран WebKit, с сайтом, откуда была взята конкретная новость
 
@@ -43,4 +43,4 @@
 
 * Более узкий поиск по категориям с кастомной анимацией, прописанной через расширение UITableView
 
-<img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/detail.gif" width="160"> 
+<img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/detail.gif" width="160">

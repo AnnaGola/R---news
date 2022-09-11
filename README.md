@@ -3,10 +3,11 @@
 
 В этом проекте я использовала:
 * MVVM + binding
-* SnapKit для верстки 
-* Lottie для анимаций 
-* Kingfisher для изображений
-* UserDefaults для хранения данных
+* SnapKit
+* Lottie
+* Kingfisher
+* UserDefaults
+* Регулярные выражения для валидации
 
 ## Launch Screen и Архитектура проекта
 
@@ -14,7 +15,7 @@
 
 ## Home Page
 
-На главной странице при первом запуске приложения будет возможность зарегестрироватьсся или войти в уже сущетсвующий аккаунт.
+На главной странице при первом запуске приложения будет возможность зарегестрироваться или войти в уже сущетсвующий аккаунт.
 
 <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/all.gif" width="160"> 
 
@@ -26,20 +27,20 @@
 
 ## LogIn Page
 
-Поссле успешной регистрации можно сразу выполнить вход в аккаунт.
+После успешной регистрации можно сразу выполнить вход в аккаунт.
 
 <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/login.gif" width="160"> 
 
-## News 
+## News
 
-* Основной экран с новостями, первый запуск
+* Основной экран с новостями, по клику на любую из новостей откроется детальный экран с более подробной информацией об этой новости, по клику на кнопку "Read more" откроется еще один экран WebKit, с сайтом, откуда была взята конкретная новость
 
 <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/placeholder.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/newsscreen.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/detailscreen.gif" width="160">  <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/webkit.gif" width="160"> 
 
-* Смена страны в пикере
+* Смена страны в пикере позволит смотреть актуальные новости в этой стране, на языке этой страны!
 
 <img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/picker.gif" width="160"> 
 
 * Более узкий поиск по категориям с кастомной анимацией, прописанной через расширение UITableView
 
-<img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/detail.gif" width="160"> 
+<img src="https://github.com/AnnaGola/R-news/blob/main/Screenshots/detail.gif" width="160">

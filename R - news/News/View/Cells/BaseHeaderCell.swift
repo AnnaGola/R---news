@@ -135,19 +135,24 @@ final class BaseHeaderCell: UITableViewCell, Loadable {
 
 //MARK: - Configuration
     func configure(with model: News) {
-        guard let url = URL(string: model.urlToImage ?? "") else { return }
-        
-        iconImageView.kf.setImage(
-            with: url,
-            placeholder: UIImage(named: "placeholderImage"),
-            options: [
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(0.5)),
-                .cacheOriginalImage
-            ])
-        
-        dateLabel.text = model.publishedAt.stringToDate()?.timeAgoDisplay()
-        titleLabel.text = model.title
-        publisherLabel.text = model.source.name
+        DispatchQueue.global().async {
+            guard let url = URL(string: model.urlToImage ?? "") else { return }
+            
+            self.iconImageView.kf.setImage(
+                with: url,
+                placeholder: UIImage(named: "placeholderImage"),
+                options: [
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(0.5)),
+                    .cacheOriginalImage
+                ])
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.dateLabel.text = model.publishedAt.stringToDate()?.timeAgoDisplay()
+                self.titleLabel.text = model.title
+                self.publisherLabel.text = model.source.name
+                self.iconImageView.reloadInputViews()
+            }
+        }
     }
 }

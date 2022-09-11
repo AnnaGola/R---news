@@ -10,11 +10,11 @@ import SnapKit
 import Kingfisher
 
 final class BaseCell: UITableViewCell, Loadable {
-
-//MARK: - Identifier
+    
+    //MARK: - Identifier
     static let identifier = "BaseCell"
-
-//MARK: - Properties
+    
+    //MARK: - Properties
     private var iconImageLayer = CAGradientLayer()
     private var titleLayer = CAGradientLayer()
     private var dateLayer = CAGradientLayer()
@@ -24,7 +24,7 @@ final class BaseCell: UITableViewCell, Loadable {
     private let dateLabel = UILabel()
     private let publisherLabel = UILabel()
     
-//MARK: - Initialization
+    //MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
@@ -34,8 +34,8 @@ final class BaseCell: UITableViewCell, Loadable {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-//MARK: - Setup
+    
+    //MARK: - Setup
     private func setup() {
         iconImageLayer.startPoint = CGPoint(x: 0, y: 0)
         iconImageLayer.endPoint = CGPoint(x: 1, y: 1)
@@ -87,7 +87,7 @@ final class BaseCell: UITableViewCell, Loadable {
         publisherLayer.add(publisherGroup, forKey: "backgroundColor")
     }
 
-//MARK: - Layout
+    //MARK: - Layout
     private func layout() {
         contentView.addSubview(iconImageView)
         contentView.addSubview(titleLabel)
@@ -134,10 +134,9 @@ final class BaseCell: UITableViewCell, Loadable {
         publisherLayer.cornerRadius = 3
     }
 
-//MARK: - Configuration
+    //MARK: - Configuration
     func configure(with model: News) {
         guard let url = URL(string: model.urlToImage ?? "") else { return }
-        
         iconImageView.kf.setImage(
             with: url,
             placeholder: UIImage(named: "placeholderImage"),
@@ -146,10 +145,11 @@ final class BaseCell: UITableViewCell, Loadable {
                 .transition(.fade(0.5)),
                 .cacheOriginalImage
             ])
-        
         dateLabel.text = model.publishedAt.stringToDate()?.timeAgoDisplay()
         titleLabel.text = model.title
         publisherLabel.text = model.source.name
+        iconImageView.reloadInputViews()
+        
     }
 }
 

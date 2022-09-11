@@ -77,16 +77,17 @@ final class SelectedNewsViewController: UIViewController {
         imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
         imageView.clipsToBounds = true
-        guard let url = URL(string: news.urlToImage ?? "") else { return }
-        imageView.kf.indicatorType = .activity
-        imageView.kf.setImage(
-            with: url,
-            placeholder: UIImage(named: "placeholderImage"),
-            options: [
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(0.5)),
-                .cacheOriginalImage
-            ])
+            guard let url = URL(string: self.news.urlToImage ?? "") else { return }
+            imageView.kf.indicatorType = .activity
+            imageView.kf.setImage(
+                       with: url,
+                       placeholder: UIImage(named: "placeholderImage"),
+                       options: [
+                           .scaleFactor(UIScreen.main.scale),
+                           .transition(.fade(0.5)),
+                           .cacheOriginalImage
+                       ])
+                imageView.reloadInputViews()
     }
     
     private func setupNewsPageButton() {

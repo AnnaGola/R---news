@@ -22,13 +22,13 @@ final class PickerViewController: UIViewController {
 //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewCcontroller()
+        setupViewController()
         setupCountryPicker()
         setupCloseButton()
     }
     
 //MARK: - Setups
-    private func setupViewCcontroller() {
+    private func setupViewController() {
         view.backgroundColor = .secondarySystemBackground
         navigationItem.title = "Choose a Country"
     }

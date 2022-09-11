@@ -10,8 +10,8 @@ import SnapKit
 import Lottie
 
 final class HomePageViewController: UIViewController {
-
-//MARK: - Properties
+    
+    //MARK: - Properties
     private let clickLabel = UILabel()
     private let bodyLabel = UILabel()
     private let logInButton = UIButton(type: .system)
@@ -19,7 +19,7 @@ final class HomePageViewController: UIViewController {
     private let viewAnimation = AnimationView(name: "backView")
     private let welcomeAnimation = AnimationView(name: "hello")
     
-//MARK: - Methods
+    //MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHomePage()
@@ -34,7 +34,7 @@ final class HomePageViewController: UIViewController {
     }
     
     private func setupHomePage() {
-//MARK: - Setup animations
+        //MARK: - Setup animations
         welcomeAnimation.loopMode = .autoReverse
         welcomeAnimation.alpha = 0.8
         welcomeAnimation.animationSpeed = 0.7
@@ -44,7 +44,7 @@ final class HomePageViewController: UIViewController {
         viewAnimation.alpha = 0.8
         viewAnimation.play()
         
-//MARK: - Setup label
+        //MARK: - Setup label
         bodyLabel.text = "We have created this safe place just for you, where you can read news that are relatable and relevant."
         bodyLabel.numberOfLines = 0
         bodyLabel.textAlignment = .left
@@ -66,7 +66,7 @@ final class HomePageViewController: UIViewController {
             make.right.left.equalToSuperview().inset(50)
         }
         
-//MARK: - Setup buttons
+        //MARK: - Setup buttons
         logInButton.setTitle("Log In", for: .normal)
         logInButton.setTitleColor(.white, for: .normal)
         logInButton.titleLabel?.font = UIFont(name: "Helvetica", size: 19)
@@ -103,7 +103,7 @@ final class HomePageViewController: UIViewController {
             make.right.left.equalToSuperview().inset(90)
             make.height.equalTo(40)
         }
-  }
+    }
     
     @objc private func logInTapped() {
         let vc = LogInViewController()

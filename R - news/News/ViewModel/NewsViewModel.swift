@@ -7,7 +7,7 @@
 
 import Foundation
 
-//MARK: - ViewModel Protocol
+    //MARK: - ViewModel Protocol
 protocol NewsViewModelProtocol: AnyObject {
     var news: Bindable<[News]> { get set }
     var error: Bindable<NetworkError?> { get set }
@@ -30,7 +30,7 @@ protocol NewsViewModelProtocol: AnyObject {
 
 final class NewsViewModel: NewsViewModelProtocol {
     
-//MARK: - Properties
+    //MARK: - Properties
     let network: NetworkServiceProtocol
     var news: Bindable<[News]>
     var error: Bindable<NetworkError?>
@@ -51,7 +51,7 @@ final class NewsViewModel: NewsViewModelProtocol {
         }
     }
     
-//MARK: - Initilazing
+    //MARK: - Initilazing
     init(model: Bindable<[News]>, network: NetworkServiceProtocol, error: Bindable<NetworkError?>, title: Bindable<String>, isLoading: Bindable<Bool>, totalData: Int, searchText: String, country: String, topic: String) {
         self.network = network
         self.news = model
@@ -66,7 +66,7 @@ final class NewsViewModel: NewsViewModelProtocol {
         defer { setCountryName() }
     }
     
-//MARK: - Naming
+    //MARK: - Naming
     func setCountryName() {
         title.value = "News" + " - " + country.uppercased()
     }
@@ -74,27 +74,39 @@ final class NewsViewModel: NewsViewModelProtocol {
     func setTopicName() {
         title.value = "News" + " - " + country.uppercased() + "\(topic)"
     }
-
-//MARK: - Network calls
+    
+    //MARK: - Network calls
     func getTopNews(country: String) {
-        network.getTopNews(country: country) { [weak self] result in
-            self?.switchCase(result: result)
+        DispatchQueue.global(qos: .utility).async {
+            self.network.getTopNews(country: country) { [weak self] result in
+                DispatchQueue.main.async {
+                    self?.switchCase(result: result)
+                }
+            }
         }
     }
     
     func searchNews(query: String) {
-        network.searchNews(query: query) { [weak self] result in
-            self?.switchCase(result: result)
+        DispatchQueue.global(qos: .utility).async {
+            self.network.searchNews(query: query) { [weak self] result in
+                DispatchQueue.main.async {
+                    self?.switchCase(result: result)
+                }
+            }
         }
     }
     
     func searchSpecificNews(topic: String, country: String) {
-        network.searchTopicNews(topic: topic, country: country) { [weak self] result in
-            self?.switchCase(result: result)
+        DispatchQueue.global(qos: .utility).async {
+            self.network.searchTopicNews(topic: topic, country: country) { [weak self] result in
+                DispatchQueue.main.async {
+                    self?.switchCase(result: result)
+                }
+            }
         }
     }
     
-//MARK: - Network response
+    //MARK: - Network response
     func switchCase(result: Result<NewsResponse, NetworkError>) {
         switch result {
         case .success(let data):
@@ -105,9 +117,11 @@ final class NewsViewModel: NewsViewModelProtocol {
     }
     
     func success(for result: NewsResponse) {
-        news.value = result.articles
-        isLoading.value = false
-        totalData = result.totalResults
+        DispatchQueue.main.async {
+            self.news.value = result.articles
+            self.isLoading.value = false
+            self.totalData = result.totalResults
+        }
     }
     
     func failure(of error: NetworkError) {

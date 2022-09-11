@@ -11,17 +11,17 @@ import Kingfisher
 
 final class NewsTableViewCell: UITableViewCell {
     
-//MARK: - Identifier
+    //MARK: - Identifier
     static let identifier = "NewsTableViewCell"
-
-//MARK: - Properties
+    
+    //MARK: - Properties
     private var isLoaded = false
     private let iconImageView = UIImageView()
     private let titleLabel = UILabel()
     private let dateLabel = UILabel()
     private let publisherLabel = UILabel()
-
-//MARK: - Initialization
+    
+    //MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViewController()
@@ -31,8 +31,8 @@ final class NewsTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-//MARK: - Setups
+    
+    //MARK: - Setups
     private func setupViewController() {
         contentView.addSubview(iconImageView)
         contentView.addSubview(titleLabel)
@@ -86,10 +86,9 @@ final class NewsTableViewCell: UITableViewCell {
         publisherLabel.font = .systemFont(ofSize: 12, weight: .regular)
     }
     
-//MARK: - Configuration
+    //MARK: - Configuration
     func configure(with model: News) {
         guard let url = URL(string: model.urlToImage ?? "") else { return }
-        
         iconImageView.kf.setImage(
             with: url,
             placeholder: UIImage(named: "placeholderImage"),
@@ -98,10 +97,10 @@ final class NewsTableViewCell: UITableViewCell {
                 .transition(.fade(0.5)),
                 .cacheOriginalImage
             ])
-        
         dateLabel.text = model.publishedAt.stringToDate()?.timeAgoDisplay()
         titleLabel.text = model.title
         publisherLabel.text = model.source.name
+        iconImageView.reloadInputViews()
     }
 }
 

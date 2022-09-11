@@ -21,7 +21,7 @@ enum CellType {
 
 final class NewsViewController: UIViewController, NewsViewControllerProtocol {
     
-//MARK: - Properties
+    //MARK: - Properties
     var viewModel: NewsViewModelProtocol
     private let sections = [CellType.header, CellType.list]
     private let searchController = UISearchController(searchResultsController: nil)
@@ -29,7 +29,7 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
     private var isSearching = false
     private var isLoaded = false
     
-    private let newsTableView = UITableView(frame: .zero, style: .grouped)
+    let newsTableView = UITableView(frame: .zero, style: .grouped)
     private var activityIndicator = UIActivityIndicatorView(style: .medium) {
         didSet {
             activityIndicator.hidesWhenStopped = true
@@ -37,7 +37,7 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
         }
     }
     
-//MARK: - Initilazing
+    //MARK: - Initilazing
     init(viewModel: NewsViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -47,7 +47,7 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
-//MARK: - ViewDidLoad
+    //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewController()
@@ -59,11 +59,11 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
         setupBidings()
     }
     
-//MARK: - Setups
+    // MARK: - Setups
     private func setupViewController() {
         view.backgroundColor = #colorLiteral(red: 0.9724035859, green: 0.9314741492, blue: 0.9023552537, alpha: 1)
         navigationController?.navigationItem.title = "News"
-        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.2550722063, green: 0.3968343735, blue: 0.3025023043, alpha: 1)
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.3880472779, green: 0.6039398909, blue: 0.4619669318, alpha: 1)
         navigationItem.backButtonTitle = ""
         activityIndicator.startAnimating()
     }
@@ -75,7 +75,6 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
         newsTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
         activityIndicator.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
         }
@@ -138,9 +137,10 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
         newsTableView.register(
             BaseCell.self,
             forCellReuseIdentifier: BaseCell.identifier)
+        newsTableView.reloadData()
     }
     
-//MARK: - Actions
+    //MARK: - Actions
     
     @objc private func didTapSearchButton() {
         searchController.isActive = true
@@ -160,39 +160,42 @@ final class NewsViewController: UIViewController, NewsViewControllerProtocol {
     }
     
     @objc private func refreshNewsData() {
-        isLoaded = !isLoaded
-        viewModel.getTopNews(country: viewModel.country)
-        isSearching = false
-        DispatchQueue.main.async {
-            self.newsTableView.reloadData()
+        DispatchQueue.global(qos: .utility).async { [weak self] in
+            guard let self = self else { return }
+            self.isLoaded = !self.isLoaded
+            self.viewModel.getTopNews(country: self.viewModel.country)
+            DispatchQueue.main.async {
+                self.isSearching = false
+//                self.newsTableView.reloadData()
+            }
         }
     }
     
-//MARK: - Biding
+    // MARK: - Biding
     private func setupBidings() {
         viewModel.title.bind { [weak self] title in
+            guard let self = self else { return }
             DispatchQueue.main.async {
-                self?.title = title
+                self.title = title
+                self.newsTableView.reloadData()
             }
         }
         
         viewModel.isLoading.bind { [weak self] isLoaded in
+            guard let self = self else { return }
             DispatchQueue.main.async {
-                if !isLoaded {
-                    self?.activityIndicator.stopAnimating()
-                } else {
-                    self?.isLoaded = false
-                    self?.newsTableView.reloadData()
-                }
+                isLoaded ? self.isLoaded = false : self.activityIndicator.stopAnimating()
+                self.newsTableView.reloadData()
             }
         }
         
         viewModel.error.bind { [weak self] error in
+            guard let self = self else { return }
             DispatchQueue.main.async {
                 if let error = error {
-                    let title = "Error Code : \(error.localizedDescription)"
-                    let message = "Something went wronge, please check your network and try againg"
-                    self?.setAlert(title: title, message: message)
+                    self.setAlert(title: "Error Code: \(error.localizedDescription)",
+                                  message: "Something went wronge, please check your network and try againg")
+                    self.newsTableView.reloadData()
                 }
             }
         }

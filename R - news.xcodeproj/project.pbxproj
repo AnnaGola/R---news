@@ -240,9 +240,9 @@
 			children = (
 				AF99B96D289FDE45008CE3A7 /* Application */,
 				AF892CD5289AECF500E79D4A /* CustomLaunchScreen */,
+				AF7C974B28B0E019000729C9 /* Assembly */,
 				AF7C974428B0DA1E000729C9 /* Authtarization */,
 				AF7C974328B0D9CD000729C9 /* News */,
-				AF7C974B28B0E019000729C9 /* Assembly */,
 				AF7C973228B023C5000729C9 /* Network */,
 				AF8013D0289EF2450071C156 /* Extensions */,
 				AF892CD6289AED1700E79D4A /* Supporting files */,

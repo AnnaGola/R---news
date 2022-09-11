@@ -43,5 +43,4 @@ class DataBase {
                         password: password)
         users.insert(user, at: 0)
     }
-    
 }

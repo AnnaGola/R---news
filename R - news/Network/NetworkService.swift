@@ -36,13 +36,15 @@ final class NetworkService: NetworkServiceProtocol {
             
             let task = URLSession.shared.dataTask(with: url) { data, response, error in
                 guard let data = data else { return }
-                
                 let decoder = JSONDecoder()
-                do {
-                    let county = try decoder.decode(NewsResponse.self, from: data)
-                    completion(Result.success(county))
-                } catch {
-                    completion(Result.failure(.failedToGetData))
+                
+                DispatchQueue.main.async {
+                    do {
+                        let county = try decoder.decode(NewsResponse.self, from: data)
+                        completion(Result.success(county))
+                    } catch {
+                        completion(Result.failure(.failedToGetData))
+                    }
                 }
             }
             task.resume()
@@ -59,19 +61,21 @@ final class NetworkService: NetworkServiceProtocol {
             
             let task = URLSession.shared.dataTask(with: url) { data, response, error in
                 guard let data = data else { return }
-                
                 let decoder = JSONDecoder()
-                do {
-                    let query = try decoder.decode(NewsResponse.self, from: data)
-                    completion(Result.success(query))
-                } catch {
-                    completion(Result.failure(.failedToGetData))
+                
+                DispatchQueue.main.async {
+                    do {
+                        let query = try decoder.decode(NewsResponse.self, from: data)
+                        completion(Result.success(query))
+                    } catch {
+                        completion(Result.failure(.failedToGetData))
+                    }
                 }
             }
             task.resume()
         }
     }
-        
+    
     
     func searchTopicNews(topic: String, country: String, completion: @escaping (Result<NewsResponse, NetworkError>) -> Void) {
         DispatchQueue.global(qos: .utility).async {
@@ -83,13 +87,15 @@ final class NetworkService: NetworkServiceProtocol {
             
             let task = URLSession.shared.dataTask(with: url) { data, response, error in
                 guard let data = data else { return }
-                
                 let decoder = JSONDecoder()
-                do {
-                    let topicByCountry = try decoder.decode(NewsResponse.self, from: data)
-                    completion(Result.success(topicByCountry))
-                } catch {
-                    completion(Result.failure(.failedToGetData))
+                
+                DispatchQueue.main.async {
+                    do {
+                        let topicByCountry = try decoder.decode(NewsResponse.self, from: data)
+                        completion(Result.success(topicByCountry))
+                    } catch {
+                        completion(Result.failure(.failedToGetData))
+                    }
                 }
             }
             task.resume()
